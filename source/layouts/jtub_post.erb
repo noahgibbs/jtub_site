@@ -1,0 +1,61 @@
+<% wrap_layout :layout do %>
+  <!-- Blog page layout -->
+  <div class="blog-page card border-light">
+    <div class="card-header">
+      <h3 class="card-title"><%= current_page.data.title || "Hello!" %></h3>
+      <% if current_page.respond_to?(:date) %>
+        <span class="card-body text-muted"><%= current_page.date.strftime('%b %e %Y') %></span>
+      <% end %>
+    </div>
+    <div class="card-body">
+      <%= yield %>
+    </div>
+    <!--
+    <div class="text-muted pager">
+      <% prev_pub = prev_published(current_article) %>
+      <% if (!current_page.data.has_key?("prev") || current_page.data.prev) && prev_pub %>
+        <a href="<%= prev_pub.url %>"><button class="pull-left btn btn-primary">&#8592; <%= prev_pub.title %></button></a>
+      <% end %>
+      <% next_pub = next_published(current_article) %>
+      <% if (!current_page.data.has_key?("next") || current_page.data.next) && next_pub %>
+        <a href="<%= next_pub.url %>"><button class="pull-right btn btn-primary"><%= next_pub.title %> &#8594;</button></a>
+      <% end %>
+    </div>
+  -->
+  </div>
+
+  <!--
+  <% if !current_page.data.has_key?("comments") || current_page.data.comments %>
+
+<div id="disqus_thread" class="card" style="padding:10px;"></div>
+<script>
+    var disqus_config = function () {
+      <%
+        page_url = "https://justtheusefulbits.com" + current_page.url.chomp("/")
+        disqus_id = current_page.data.disqus_id ? current_page.data.disqus_id : page_url
+      %>
+        // Replace PAGE_URL with your page's canonical URL variable
+        this.page.url = '<%= page_url %>';
+
+        // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.identifier = '<%= disqus_id %>';
+    };
+
+    (function() {
+        var d = document, s = d.createElement('script');
+
+        s.src = 'https://rubymadscience.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>
+    Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+        comments powered by Disqus.
+    </a>
+</noscript>
+-->
+  <% end %>
+<% end %>
