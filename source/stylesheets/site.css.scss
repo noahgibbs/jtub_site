@@ -1,0 +1,28 @@
+body {
+  padding-top:120px;
+}
+
+
+.card {
+  width: 95%;
+  margin: 3%;
+}
+
+.pager {
+  display: inline;
+  list-style: none;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+
+.pull-right {
+  float:right;
+}
+
+.pull-left {
+  float:left;
+}

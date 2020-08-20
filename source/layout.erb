@@ -8,13 +8,13 @@
     <meta name="author" content="Noah Gibbs">
     <!-- Use the title from a page's frontmatter if it has one -->
     <title><%= current_page.data.title || "Computer Science: Just the Useful Bits" %></title>
+    <%= stylesheet_link_tag "bootstrap.min.css" %>
     <%= stylesheet_link_tag "site" %>
     <%= javascript_include_tag "site" %>
   </head>
   <body>
-    <div class="wrapper container">
-
-      <%= yield %>
-    </div>
+    <%= yield %>
+    <%= javascript_include_tag "jquery.min.js" %>
+    <%= javascript_include_tag "bootstrap.min.js" %>
   </body>
 </html>

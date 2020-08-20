@@ -1,19 +1,17 @@
 ---
-title: "Codefol.io, Latest Posts"
+title: "Computer Science: Just the Useful Bits"
 pageable: true
 per_page: 10
 comments: false
+layout: jtub_frame
 ---
 
-<!-- TODO: this is the front page - add some kind of "who are you?" link to
-    send people toward appropriate topics. -->
-
 <div class="outer">
-    <div class="post-feed-title inner">Latest Articles</div>
+    <h1>Latest Interviews</h1>
 
     <div class="post-feed inner-wide">
       <% page_articles.each_with_index do |article, i|
-           next unless is_published(article)
+           #next unless is_published(article)
         %>
         <%= partial "postbox", locals: { post: article } %>
       <% end %>
@@ -21,4 +19,3 @@ comments: false
 </div>
 
 <%= partial "pagination" %>
-<%= partial "newsletter-box" %>

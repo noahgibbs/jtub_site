@@ -23,9 +23,9 @@ page '/links/*', layout: false
 
 activate :blog do |blog|
   # This will add a prefix to all links, template references and source paths
-  blog.prefix = "jtub"
+  #blog.prefix = "jtub"
 
-  blog.permalink = "posts/{slug}.html"
+  blog.permalink = "jtub/{slug}.html"
   # Matcher for blog source files
   blog.sources = "posts/{year}-{month}-{day}-{slug}.html"
   # blog.summary_separator = /\<\!\-\-\ more\ \-\-\>/
@@ -45,7 +45,7 @@ activate :blog do |blog|
 
   #blog.tag_template = "tag.html"
   #blog.taglink = "tags/{tag}/index.html"
-  blog.calendar_template = "calendar.html"
+  #blog.calendar_template = "calendar.html"
 
   # Enable pagination
   blog.paginate = true
@@ -55,8 +55,6 @@ end
 
 activate :directory_indexes
 
-page "/feed.xml", layout: false
-page "/atom.xml", layout: false
 # Reload the browser automatically whenever files change
 configure :development do
   activate :livereload
