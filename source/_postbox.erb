@@ -13,7 +13,7 @@
     <div class="post-content">
         <% if post.data.anchor_fm_embed %>
             <iframe src="https://anchor.fm/just-the-useful-bits/embed/episodes/<%= post.data.anchor_fm_embed %>" height="102px" width="400px" frameborder="0" scrolling="no"></iframe>
-            <br/><a href="https://anchor.fm/just-the-useful-bits/episodes/<%= current_page.data.anchor_fm_embed %>">(Anchor.fm link)</a>
+            <br/><a href="https://anchor.fm/just-the-useful-bits/episodes/<%= post.data.anchor_fm_embed %>">(Anchor.fm link)</a>
         <% end %>
 
         <p><%= post.summary(300) %></p>
