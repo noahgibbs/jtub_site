@@ -12,6 +12,14 @@
             <iframe src="https://anchor.fm/just-the-useful-bits/embed/episodes/<%= current_page.data.anchor_fm_embed %>" height="102px" width="400px" frameborder="0" scrolling="no"></iframe>
             <br/><a href="https://anchor.fm/just-the-useful-bits/episodes/<%= current_page.data.anchor_fm_embed %>">(Anchor.fm link)</a>
         <% end %>
+        <% if current_page.data.episode_image %>
+          <img src="<%= current_page.data.episode_image %>" alt="Portrait of the interviewee" class="page-portrait" />
+        <% end %>
+        <% if current_page.data.quick_summary %>
+            <p class="quick-summary-area">
+              <%= current_page.data.quick_summary %>
+            </p>
+        <% end %>
       <%= yield %>
     </div>
     <!--
