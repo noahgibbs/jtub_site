@@ -1,0 +1,18 @@
+---
+title: "Computer Science: Just the Useful Bits (Pre-Pub)"
+comments: false
+layout: jtub_frame
+---
+
+<div class="outer">
+    <h1>Interviews That Aren't Actually Ready Yet</h1>
+    <hr/>
+
+    <div class="post-feed inner-wide">
+      <% page_articles.each_with_index do |article, i|
+           next if is_published(article)
+        %>
+        <%= partial "postbox", locals: { post: article } %>
+      <% end %>
+    </div>
+</div>
