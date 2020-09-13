@@ -7,4 +7,191 @@ quick_summary: "Mike, of course, is most famous in the Ruby community for Sideki
 
 ## Links We Mention
 
+* [Sidekiq](https://github.com/mperham/sidekiq)
+* [Mike's Twitter](https://twitter.com/getajobmike)
+* [Faktory](https://github.com/contribsys/faktory)
+* [MikePerham.com](https://mikeperham.com)
+* [Big O Notation](https://en.wikipedia.org/wiki/Big_O_notation)
+* [Raft](https://raft.github.io/)
+* [Paxos](https://en.wikipedia.org/wiki/Paxos_(computer_science))
+* [Consensus](https://en.wikipedia.org/wiki/Consensus_(computer_science))
+* [Paxos Made Live - An Engineering Perspective](https://static.googleusercontent.com/media/research.google.com/en//archive/paxos_made_live.pdf)
+* [NCSA Mosaic](https://en.wikipedia.org/wiki/Mosaic_(web_browser))
+* [Gopher](https://en.wikipedia.org/wiki/Gopher_(protocol))
+* [Archie](https://en.wikipedia.org/wiki/Archie_(search_engine))
+* [FTP](https://en.wikipedia.org/wiki/File_Transfer_Protocol)
+* [CS:JTUB with Tyler Williams](http://justtheusefulbits.com/jtub/tyler-williams-hands-on-teaching-formal-and-informal/)
+* [Massive Open Online Courses](https://en.wikipedia.org/wiki/Massive_open_online_course)
+* [Tiki](https://en.wikipedia.org/wiki/Tiki_culture)
+
 ## Transcript
+
+Noah Gibbs: Hi, I'm Noah Gibbs. And this is Computer Science: Just the Useful Bits. I'm here with Mike Perham, who has done a wide variety of excellent things, but it's certainly most famous in the Ruby community for a [Sidekiq](https://github.com/mperham/sidekiq) and Sidekiq Pro. Mike, we talked a little bit about your your education earlier, but I think you're noteworthy that way, among folks I know at least. You mentioned you have a master's degree in computer science. Is that right?
+
+Mike Perham: Yeah. Thanks for having me, Noah. Glad to be here. Yes, I do. I went to college to be a physics guy and played around with my computer in my dorm room so much that I turned into a computer science guy. So it turns out physics was a lot harder than I thought it was going to be. So programming was much easier than, say, integrating various very difficult equations. So yeah, I've been, I got a bachelor's and master's degree in Computer Science from Cornell in upstate New York. And then I did two internships at software companies during my my college career at a company called PeopleSoft, which made enterprise IT software. And then another place called Microsoft, which made, well effectively enterprise IT software also. But yeah, at PeopleSoft, I just did your basic IP stuff, I built laptops and that kind of stuff. So it wasn't really very relevant to my software career. But at Microsoft, I actually got to see how and worked on a team that maintained legacy API's for Windows NT. And so I got to see how much effort Microsoft puts into backwards compatibility. And I got to see how gross that code base is because boy, they've got hack upon hack upon hack layered into that code. So yeah, for the last 20 years I've been doing, well, I did Visual Basic, starting straight out of college and then I did Java. And then I saw Ruby on Rails when David introduced it many years ago and loved it. And so I got a job as a, I went from being a really senior... Well, I did I open source even back then. But I got to go from being a senior Java guy to being a newbie Ruby guy. And that was a tough career shift to make. I respect anybody who will go from one, you know, completely drop one silo or technology that they're an expert in, and then just go to this whole new sort of area. Thankfully, you know, the underpinnings are kind of the same. The computer science remains the same. And so I was able to come up to speed on Ruby relatively quick, and a bonus with the community is that Ruby is so open source oriented. So I got to go from doing enterprise Java to more, what I would call a developer friendly open source tooling and projects. And that's kind of got me to 10 years ago and I started a whole bunch of open source projects, and one of them just kind of happened to take off and I happen to be able to build a business around it. So that's where we are today now.
+
+Noah Gibbs: Nice. I just want to give a a plus one on that about the career change being difficult. I mean, I suppose Ruby people more like our age tend to have come from somewhere else first. But yeah, I came from C and C++ and operating systems and drivers before coming into Ruby and similar in some ways to yours. So have you done much in the way of other self study? I mean, again, at your age, your point in the career it's very common to have read a bunch of white papers or taken classes or done certifications or workshops. Would you say you've done any of that kind of thing?
+
+Mike Perham: I wouldn't say I've done too much formal stuff. What I did do for many years was maintain a blog where I talked about papers that I read, where I talked about projects that I saw, where I talked about problems and solutions that I ran into and came up with. So I think I was very much in the, in the same sense as most people, that is, a lot of just self directed. Study and playing with various technologies and that sort of thing. For instance, like Clojure, you know, I played with Clojure for a couple of weeks and blogged my thoughts on on the language design and and where I thought it was strong and weak and that sort of thing. But at no point have I bought training through Cisco to become a Cisco Certified Network Engineer or anything, anything as formal as that. Yeah, I have gone to conferences. It's probably the most formal stuff I've gone to, you know, you get your company to pay for you to go to conference, watch talks and that sort of thing.
+
+Noah Gibbs: Yeah, it's common for anybody to pick up and play with languages. Though when you say blogging about papers you read, my experience is that while some engineers do sit down and read white papers... I certainly have... that's maybe not as as absolutely standard. So the fact that you mentioned that is definitely a sign you put some usual and some unusual time into your own self advancement. So well done on that.
+
+Mike Perham: Yeah, there's times where I've, for instance, dug into the [Raft](https://raft.github.io/) white paper, [Paxos](https://en.wikipedia.org/wiki/Paxos_(computer_science)), all that kind of distributed consensus stuff is still very academic. And very difficult to learn from the code. So you kind of have to dive into the paper and get a feel for overall what what is this trying thing trying to do? What is the high level overview of how it works, that sort of thing. So that's, that's, I think, where papers come in really handy.
+
+Noah Gibbs: That makes a lot of sense. You've talked about your your formal education and the self grading, but especially the formal education. Do you feel like it prepared you for a job developing software? Do you feel like it was good preparation for your jobs doing that?
+
+Mike Perham: So did my formal education help with my job experiences that... that's your? So, I mean, at a high level, yes. It certainly gave me some engineering tools, mental tools that were valuable. But, you know, there was a lot of stuff that it didn't teach me. I think a CS major from a university tends to be a little more theoretical than I would like, you know, you'll learn about Turing machines and finite automata. And, and that kind of thing and it really does not apply too much to reality, to real world engineering in my not so humble opinion. I wasted several classes on formal theory of computing and that gave me nothing. What it does, what they often do, though, is have classes on algorithms, data structures, operating systems, software engineering. And that's the kind of stuff where the rubber meets the road. And that will be useful for anybody who is interested in working with computers long term.
+
+Noah Gibbs: That makes sense. So you definitely say the algorithms and data structures stuff is pretty directly useful. And it's more the theory of computing that is not so much. So to pick something in between those two points and quiz you about where the boundary is, I'm gonna ask you at least a little bit about [big-O notation](https://en.wikipedia.org/wiki/Big_O_notation), just because it's such an obvious thing to ask on this topic. Would you put that in the useless theory bucket or the useful mental model bucket?
+
+Mike Perham: Oh, absolutely not. No, that's very practical. I mean, the the industrial world is full of accidentally quadratic algorithms, right? So you're processing some data, and it's an order N operation. And then all of a sudden, you accidentally fill something up and it becomes N squared. And now instead of taking two seconds to calculate now it's taking five minutes or whatever. So big O is I think important to get a sense of sanity check on how long you think something is going to take to operate, to run. But yeah, there's things where, you know, people just don't understand until they understand big-O notation, and how something is implemented. Why is this thing taking so long? Why is he recommending I not do this? Sidekiq is full of API's that if people use them in the ways that I'm not talking about, and you could easily get a quadratic explosion in runtime.
+
+Noah Gibbs: That makes a lot of sense that there's kind of some some pitfalls that you need some level of understanding there to avoid.
+
+Mike Perham: Right.
+
+Noah Gibbs: On the topic of Sidekiq and especially Sidekiq Pro... So, reading through the documentation as somebody who's read those same white papers about, you know, Paxos and some of the Google stuff... I definitely was reading through and going, Oh, okay. He's clearly using consensus algorithms. Would you say that that stuff where your master's degree for instance, helped prepare you for the study to do that kind of thing? You talk about getting, you know, the white papers, reading the white papers, etc.
+
+Mike Perham: I think so. I mean, you, you get a sense, when you when you go through your four years of computer science of like, what to expect, like, how should this thing be implemented? What should it look like? What what kind of things are theoretically possible versus theoretically impossible and, and so distributed consensus is one of those things where a naive person might say, Oh, this is really easy. We'll just have two computers agree on something. But until you until you start to under understand the theory behind it, you're not going to understand literally how hard it is. Now, I will say there's oftentimes where distribute consensus is not needed. And actually Sidekiq is one of those instances. So I don't have any distributed consensus in Sidekiq. And the reason for that is that you have one master node, which is Redis. So Redis is the thing where everybody talks to it to get consensus. And so you don't need to distribute your consensus calculations amongst all the different processes. You just have Redis you use Redis operations to determine one winner, and that winner becomes the leader and then directs everything. So that's it, I have, and that's, that's in Sidekiq Enterprise, because for cron jobs, you need to have one guy who's firing the cron jobs, right. So the you may have 100 Sidekiq processes, but they all run through this algorithm to determine the leader of that cluster. And then that one leader process is the one that's firing cron jobs periodically. So that that is one case where I thought to myself, Oh, this is going to be hard doing distributed consensus. And then I realized, Oh, well Redis has an operation which allows me to do this. And so that, that don't get me wrong. There was definitely some edge cases and some bugs where you have to handle network errors and handle various edge cases that you still don't necessarily think about when you're first building this thing. But it was a lot. It's a lot simpler than a Paxos setup. For instance,
+
+Noah Gibbs: Paxos has definitely kind of kind of infamously hard. Google has, you know, first the paper that explains it. And then [the paper they wrote of what they did several years later, where they actually found all those weird edge cases and problems](https://static.googleusercontent.com/media/research.google.com/en//archive/paxos_made_live.pdf) in the implementation that explained to you what what you're going to screw up for the first few years just like they did,
+
+Mike Perham: Exactly.
+
+Noah Gibbs: You mentioned that Sidekiq has some... I couldn't tell if you were saying Sidekiq has some API's which can be misused in a way that makes it slow or or Redis has API's that you're stepping around that could make it slow. So I suppose both of those are probably true.
+
+Mike Perham: Yeah. Well, I can talk about... you mentioned or I mentioned accidentally quadratic, right? So you have an algorithm which is order N, and then you accidentally introduce an inner loop within that. So now it's N squared. The way that that can happen is if people are iterating, through their Sidekiq queues over every single job. And then they want to like delete a job within the queue. So they're scanning through the entire queue. And then they say to Redis, oh, I want to delete this job. But the problem is, is that with Redis, you don't give it an index, because the queues are constantly being changed. indexes are constantly changing every microsecond. So with Redis, what you do is you say I want to delete this item, and you give the full payload of the item. And that way Redis can scan through and find that item, whatever index it's at in the list. But to scan a list, you see the problem is an order N operation. So now you're now you're scanning through the queue to find something that you want to delete, and then you're telling Redis to delete it, which is another order N scan and so if you're going through and you're trying to find every job that matches a criteria, that's actually N squared, in Sidekiq. And so I the API is that I have, I generally tell people do not use this in application logic, this API can easily lead to performance problems.
+
+Noah Gibbs: I have that exact problem in some of my code. But luckily, it's order of number of application servers times number of jobs per day. And both of those are currently one.
+
+Mike Perham: Well, and so you know, the problem with accidentally quadratic stuff, perpetually is that you don't notice it when you're just playing with small amounts of data, right? If you've only got 10 items in your queue, and you call this code, who cares it's gonna take a millisecond but if you've got 10,000 items, now all of a sudden it takes an hour to run and there's the rub. So yeah, computer sciences where you start to see the theory of Hey, why was this so bad? How do I avoid it in the future? Well, you got to look for problems that look like this, you know, two loops nested.
+
+Noah Gibbs: It is wonderful the way that theory can let us understand our previous mistakes in such depth, adds a real texture to the ways that we've messed up completely.
+
+Mike Perham: Yeah. Well, one place where I think my computer science education was a little bit weak was well, one was software engineering. My Computer Science had nothing about open source, it had nothing about versioning and software control and all that kind of stuff. I did my computer science back in in the 90s. You know, in the Stone Age, where CVS was your state of the art source control technology.
+
+Noah Gibbs: I'm not gonna ask you if you preferred CVS or RCS.
+
+Mike Perham: Please don't.
+
+But, uh, but you know, back then, open source wasn't even, there wasn't even a name for it. Right? It was just people shared source code if they were part of the university system, and if they're a part of a corporate system. That source code just never left the walls.
+
+Noah Gibbs: You weren't actually pre-Stallman though, right? I mean, the Free Software Foundation. Admittedly, it wasn't well known, but it's it's pretty old.
+
+Mike Perham: I mean, I started college in 93. So I post date a lot of the GNU stuff.
+
+Noah Gibbs: Well, I was gonna say, yeah, you and I started... I didn't realize exactly how closely we started college. But yeah, I graduated in 98 in five years. So yes, I started in 93 as well. Yeah. No, there was there was a little bit there was still the Free Software Foundation, but everybody thought he was crazy at the time.
+
+Mike Perham: I remember two big things from my freshman year, which is Doom because it came out and literally everybody in my dorm was playing that game for weeks. And then [NCSA Mosaic](https://en.wikipedia.org/wiki/Mosaic_(web_browser)), the first web browser came out and I had a guy that I knew said hey, you should check this thing out these websites are cool. And I was like, whatever man I like going to BBSs. BBSs are the thing, are my jam.
+
+Noah Gibbs: Yeah, well, it killed off [Gopher](https://en.wikipedia.org/wiki/Gopher_(protocol)) and [Archie](https://en.wikipedia.org/wiki/Archie_(search_engine)) and you didn't see nearly as many anonymous [FTP sites](https://en.wikipedia.org/wiki/File_Transfer_Protocol) after that. I'm not sure the web has been a good thing overall.
+
+Mike Perham: Well, I like having options, right? Kind of like our modern American world seems to be 100% oriented around cars. And if all you do is orient around 100% of something, it's going to be bad no matter what. You got to keep options open, you got to have different protocols for different use cases, right. Anyways, that's me pontificating here for a second.
+
+Noah Gibbs: Well, we you know, when you're talking about about algorithms that scale poorly, I do remember that when Doom first came out, it didn't take too long before Carnegie Mellon banned it from the dorms because they use broadcasts for all their networking. And the dorms were all on one network. Which means if you had six people all playing a game of doom together, they were all broadcasting to literally every computer in... I would say the building except it was a bunch of buildings.
+
+Mike Perham: Yeah, yeah. Good times.
+
+Noah Gibbs: Good times. You talk about accidentally quadratic and I know you do a lot of fairly deep analysis on Sidekiq. I mean, it's your business. But more than that, I'll say, I know a lot of large companies that sell products of comparable complexity. And I'm not always really impressed with how well they maintain it. Whereas one of the things I've found about you is that you're pretty much always paying attention to performance for Sidekiq. I mean, not only the conversations you and I have had at conferences, but if someone follows you on Twitter or things like that, it's not hard to tell that you're working pretty constantly on these things, because you can sort of see the questions that are a side effect of this work.
+
+Mike Perham: Well, one of the one of the benefits and drawbacks of my current position is that whatever I whatever code I write is run by thousands of companies almost immediately. And so I have to be very deliberate and very careful with how I change things. And usually if I introduce a bug or a performance regression, there's somebody in the issue tracker within a few days telling me Oh, this broke our workflow or, you know, this caused this side effect. We're implementation detail triggered this behavior. So yeah, it's it's, it's a blessing and a curse. Let's let's put it this way. So you know that if I if I didn't have any customers I could change as much code as I want nobody would care. Yep. So yeah, I am always watching out for performance. That said when I try to keep the core open source because I want as many eyes looking at it as possible. The amount of contributions really useful, high quality contributions I've gotten to Sidekiq over the last eight years has been incredible. You know, you'll get you'll get people who have just dropped a PR which increases the speed by 20%. And typically, you'll do a little bit of back and forth polishing with them, but you know that that kind of stuff is invaluable. It's amazing to see the community contribute back like that. But yeah, I try to have a mental checklist of things that I look for whenever I'm changing Sidekiq or I'm reviewing somebody else's changed the Sidekiq so that I I look for things like, you know, how is this going to affect performance at all? Is this in the hot path of execution, so that I need to be really deliberate about allocations and memory usage and all that kind of stuff? And so yeah, that that kind of mental checklist is just something you get, as you put in the years and you grow from junior to associate to staff and senior engineer.
+
+Noah Gibbs: That makes sense. Like you said something and I'm completely blanking. I had like, I had a response, I'm losing it. Oh, I know what it was. So I hadn't realized quite how exactly we were in college at the same time. I was [talking to Tyler Williams](http://justtheusefulbits.com/jtub/tyler-williams-hands-on-teaching-formal-and-informal/) very recently, and he was talking about some of the things his university degree did well, and it smacked me in the face because mine didn't, just because of a difference in times. I felt when when I was in school, that they did a terrible job of emphasizing things like build versus buy or using other solutions because there weren't a lot products you could buy off the shelf and there weren't a lot of solutions. When you were in college, where you were in college, would you say they they emphasize that? Or would you say that was not a thing that was really there yet.
+
+Mike Perham: I mean, I had one class on software engineering. And I don't remember the syllabus to be to be perfectly blunt with you. But I think I think this being you know, 25 years ago at this point, the industry was just very different back then. And you have such a proliferation of tools and services that you can purchase now, that, you know, back when I started out about, the only thing you could start out with was a machine, and then you'd put Linux on it, and then build whatever software you want on top of it. We did have my second job out. I started doing Java and I started working with building websites in Java. And so we were using a commercial application server then so you know, even then we had commercial commercial software. Until To be honest with you, I consider myself a commercial application server vendor now, I mean, effectively, I am the company that yeah, that we were purchasing from back then. Because just like that I build a framework which people can use to, to run their business logic and provides, you know, dozens of features that are useful toward that end.
+
+Noah Gibbs: Yeah, no, absolutely. I certainly agree that's happening now. It's just, you know, that's been such a sea change, right. I mean, that's I when, when we when I graduated was 22 years ago now. So yeah, a few things have changed.
+
+Mike Perham: Yeah, I mean, the proliferation of AWS, AWS and the cloud is kind of ridiculous, ridiculous seachange. But that said, you know, Werner Vogels, the CTO of Amazon, was in the research lab when I was working as a PhD, post postdoc researcher in the computer lab I was in. So I mean, I knew him before the Amazon days. But yeah, I mean, the cloud has just kind of up ended how you build and architect software these days. There doesn't seem to be any stopping of it, that's for sure.
+
+Noah Gibbs: No, no, certainly the idea of sort of piecemeal renting other people's computers seems to be only getting more common, and only likely to keep getting more common.
+
+Mike Perham: Yeah, it's a whole lot of it kind of reminds me of Spring in Java, where you have dozens and dozens of XML files, just all wiring bits and blobs of software together. And AWS really reminds me of that, you know, you just got 50 different services that you're just using XML and YAML and whatever, to glue them all together. And it's just obscenely complex. But a lot of people just seem to think that's best practice these days. I don't know.
+
+Noah Gibbs: Well, what I'd say about AWS is a lot like what I'd say about most of Git, that it's plumbing and not porcelain. That it's providing a service, but it's not providing that service with the expectation that that's how ordinary people should consume it. And I hope Amazon's aware of that. I don't know, I haven't I haven't talked to them. I assume their salespeople and marketing people are only dimly aware of that. But I assume their engineers...
+
+Mike Perham: They're probably hanging on your every word with the expectation to completely rearchitect AWS based on our opinions.
+
+Noah Gibbs: Well, again, I assume the engineers don't think it's user friendly, but probably don't figure that's their specialty. I've certainly built some things that were not user friendly and felt perfectly good about it with the understanding that you know, there was going to be someone who did user experience that was going to slap a layer on it later. And that was okay.
+
+Mike Perham: I mean, I really see very little difference between IBM WebSphere 15 years ago, and Amazon AWS today, right? Yeah. It's it's really, it's really expensive enterprise software that you can use to implement your business apps and you're going to pay a lot for It's supposedly more robust and more reliable. But you know, it's that or you just put together some open source projects and do it kind of the old fashioned way.
+
+Noah Gibbs: Yeah, I mean, you still wind up having to rent hardware some way really, it's a lot of AWS is that it's packaged with your hardware rental. And there's not an easy way around that. I don't know, I've worked on the old style ops teams with old style ops people. And I've got to say AWS sensibilities always struck me as having a lot in common with that. It exposes an interface, but it exposes the minimum amount of interface it can on the assumption that if you write about a bunch of additional things, and they have to go through the layers you wrote, then they may not be able to get what they want done. But if you strip off as many layers as you can, there's always the chance they could write something good on top. So what do you do to study and improve these days?
+
+Mike Perham: Boy, that's a good question. It's been really tough to get the inertia to do much of anything these days. Given how radically the world is changing right now, due to COVID. I obviously, I've got customer emails that I have to deal with every day. I've got issues that are opened, bugs to fix that sort of thing. But I'll be honest, I'm not studying and learning a lot in terms of tech and white papers and what have you. I'm trying to think what the last thing that I looked into a bit. I've been doing a lot more Go recently with Faktory, so I've been paying attention to a lot of Go projects and proposals to enhance the go language and that sort of thing with generics and embedded files and file systems and that sort of thing. So that that's more than anything is is is where my eyes have been looking these days.
+
+Noah Gibbs: So it sounds like a lot of that is for, let's call it your job. I mean for, like you say, for [Faktory](https://github.com/contribsys/faktory). So it's for, you know, that's it's not Sidekiq, but it's the same kind of thing. It's it's software you sell. Right?
+
+Mike Perham: Yeah, I mean and that's that's where my attention goes I don't do a lot after hours these days in terms of, you know, if you if you build a successful business, it's hard to justify continuing to grind for after hours, because I mean, the whole point of becoming a success is is not having to work very hard and getting to enjoy your life therein. So yeah, a lot of a lot of my free time has been me just relaxing and enjoying my success rather than pushing the ball forward, so to speak.
+
+Noah Gibbs: That makes a lot of sense. I was going to say, if I was to honestly answer the question of what I was improving at and I disqualified everything I could I could really call my job, the answer would have to be something like did you know there are a whole bunch of different sizes of ice you use with different kinds of making you know, mixed drinks and it turns out crushed ice is different than shaved ice is different from... I haven't gotten all the way into the you know the serious whisky aficionados making the giant sphere of ice. But...
+
+Mike Perham: yeah, so there's also the whisky stones right? Where you chill rocks and put them in your drink, so that you get the cooling benefit, but you don't water down the drink.
+
+Noah Gibbs: That makes a lot of sense. I have not experienced those. I've once had a drink that was around the spherical icecube. But I've never, yeah, I haven't actually tried with the whisky stones. So that's good to know. That makes a lot of sense. Actually. I kind of wonder why that isn't more standard. I'm sure there's a good reason.
+
+Mike Perham: I mean, scotch and whisky are so strong that typically people want to water them down a bit. If you're trying to if you're trying to drink it neat. I guess these are useful, but I don't know how many people actually drink it neat.
+
+Noah Gibbs: Yeah, I don't know. I'm kind of weird. Like, I really enjoy the right scotch, not just neat, but neat and room temperature. Yeah, no ice, just just taking a sip and continuing. And in some cases, cask strength.
+
+Mike Perham: All right, Noah, you're more of a man than I'll ever be, I think
+
+Noah Gibbs: Well, before you decide I'm too much of a man keep in mind I drink it out of a tiny little glass. And the other kinds of drinks that I put a lot of effort into, which is why I'm looking at crushed ice is is, you know, [Tiki drinks](https://en.wikipedia.org/wiki/Tiki_culture). And I may get my "man" card revoked entirely for being a fan.
+
+Mike Perham: No, not at all. Not at all. I love me a Tiki drink. It's okay, I'll wear a Hawaiian shirt and drink a Tiki drink any any day of the week.
+
+Noah Gibbs: Nice. Yeah, I moved to Inverness so the the Tiki drinks are thin on the ground around here so I'm learning to make my own. I've gotten a whole set of bottles of things and now I'm learning how to make the ice the right way
+
+Mike Perham: I dream of Islay with a little little umbrella stuck in it. I said that's your your Tiki drink in Scotland.
+
+Noah Gibbs: Yeah, I finally got umbrellas, you know, being mailed to me. Because again, that's not a thing you find around here but I'm going to have the little paper umbrellas you know next Amazon shipment. It's on the way.
+
+Mike Perham: Send me a screenshot or photo. I want to see that.
+
+Noah Gibbs: Yeah. Once once I've got Tiki drinks where I want them, I'm gonna take a lot of pictures. You'll see it on my Twitter.
+
+Mike Perham: Yeah, you tweet that out, please.
+
+Noah Gibbs: All right. Yeah. If I'm going to drink, you know, to get Tiki drinks in Inverness, I've got to take pictures just on principle.
+
+Mike Perham: I mean, I personally think you've got a successful business right there. You open up a Tiki Bar.
+
+Noah Gibbs: You're not the first one to say so I'd be competing with the Jamaican restaurant in town, which is surprisingly good. They do mixed rum drinks, but it's not Tiki drinks.
+
+Mike Perham: Hmm. You know, a shaved shaved ice place just opened up in my, in my town a couple in about a quarter mile from here. And let me tell you, I think that's the most genius business idea in the world. I mean, you're selling sugar water, frozen sugar water at five bucks a pop. And I mean, it's just a money making operation. Maybe not in the winter, but you got a lot of time for vacation during the winter.
+
+Noah Gibbs: That's true. Yeah, that would that would be nice. I will keep that in mind. I don't know that I'm going to actually open a Tiki bar here but I'll keep that in mind. So, thinking about your master's degree thinking about your product, thinking about people listening to this who are asking themselves the question, formal computer science theory, formal computer science education, is it useful? Is it not useful? Is there anything I should be asking you specifically about that you can address well that I haven't asked here, that we haven't hit?
+
+Mike Perham: Well, I think in this day and age, it's it's reasonable to ask is a virtual computer science degree as useful as one that you get in person by going to a college or you know, a boot camp like obviously, when we're talking about learning software engineering, it's not a black or white it's not binary, it's not zero or one. It's a spectrum of everything from self taught and dropped out of high school and just read books and blogs, to getting a PhD in a you know, Ivy League school and paying through the nose and spending Most of your 20s there. So, you know a lot of people do boot camps or online, sort of what are they called Massive Online campuses or something like that?
+
+Noah Gibbs: Yeah, [MOOCs](https://en.wikipedia.org/wiki/Massive_open_online_course) or something like that. Yeah.
+
+Mike Perham: Yeah. MOOCS, I think. Yeah. But yeah, I mean, it's it's a spectrum of options and, and to be honest, having not done any of them, I can't really speak to how effective they are. But, you know, your traditional four year degree, I think more and more seems irrelevant or out of the reach of a lot of people that are interested in getting into software. So I wouldn't necessarily, I mean, in my experience, industry is full of people who don't have four year degrees in computer science, you know, that it's it's everything from people who dropped out of high school and just became a website developer for their for a bunch of local companies, to IT people who support small businesses in their community to people that go into more advanced software and start working for actual software companies building products or websites or whatever. And they just work their way up through the course of 5, 10, 15 years. So I think all those pathways are still open to people. I think job requirements in a lot of job postings are often way more optional than people think.
+
+Noah Gibbs: Yeah, I'm told that if you actually apply and you have a relatively limited set of what they claim they want that by and large, they tend to take you.  I don't know, I haven't tended to do much of that. But I'm told that works. I'm told that you can really just kind of bare-face your way through a lot of it on job requirements.
+
+Mike Perham: Maybe so. Certainly if the company is more interested in hiring Junior people and people that they're willing to mentor to come up to speed, and I think there'll be a lot more flexible. I also think a lot of companies and industries are starting to wake up to the fact that requiring a four year degree isn't very equitable. You know, there's a lot of people who don't have the financial wherewithal or the family set up to where they can spend four or five years just going to school anymore, you know, they got it, they got to hit the ground running and start making money. And, and so I think a lot of jobs who are looking to increase, you know, that their equity and the fairness and diversity of their teams, I think, are starting to wake up to this and hopefully we'll be more open to to mentoring people that have come in through a more non-traditional route.
+
+Noah Gibbs: That makes a lot of sense. So let's pretend that this episode of this podcast just blows up. It's everywhere. everybody listens to it. Everybody thinks it's awesome. So what's your SoundCloud? You know, if they if they hear this and they're amazed and they want to know more about you? Where do they go next? What's the next step?
+
+Mike Perham: Well, [my website](https://mikeperham.com) has 12 years? 13, 14 years of my blog, archives and hundreds of hundreds of articles. So that's just my name Mike Perham dot com. And then [my Twitter handle](https://twitter.com/getajobmike) is "get a job Mike," which is a hilarious joke about background jobs and sort of what I do, so... Sidekiq will get you a job so to speak. So yeah, get a job Mike is my Twitter handle and so I'm usually there and tweeting and reading replies and what have you. But yeah, the the website, my GitHub repos are always open for people opening issues and asking questions that sort of thing.
+
+Noah Gibbs: Nice. I had somehow not put that together, as "get a job, Mike." Like I I knew you were self employed then your handle was "get a job, Mike," but I hadn't thought about the whole Sidekiq background thing, background job thing. I just I totally didn't put that together.
+
+Mike Perham: It goes to show you I thought it was the most obvious joke in the world and yet people are like, I don't understand. Oh, okay.
+
+Noah Gibbs: You were self employed and it said "get a job, Mike."
+
+Mike Perham: That was part of it to being the CEO of my own one man company. You know, you could easily say I'm just, I'm unemployed and just I need to go get a more traditional job, but not not right now.
+
+Noah Gibbs: Yeah, I think I've known too many independent contractors who, you know, when you ask them what they did would say things like, Oh, I'm a burden on society.
+
+Mike Perham: Oh, I hope I'm not too much of a burden.
+
+Noah Gibbs: I assume you're not, but they always thought it was hilariously funny. We were all young. Well, I'm Noah Gibbs. This has been Mike Perham here on Computer Science: Just the Useful Bits. If you want to know more about him, as he says, his Twitter handle is @getajobmike, and you can always Google Sidekiq and find out about what, at least in the Ruby community, he's doing these days.
+
+Mike Perham: Thanks for having me, Noah.
+
+Noah Gibbs: Yeah, it's been great talking to you. I mean, as always.
+
+Mike Perham: That was quick and easy. I thought I was going to get harder questions, I thought you were going to test me on more computer science stuff.
