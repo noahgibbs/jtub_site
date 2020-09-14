@@ -38,7 +38,6 @@
   -->
   </div>
 
-  <!--
   <% if !current_page.data.has_key?("comments") || current_page.data.comments %>
 
 <div id="disqus_thread" class="card" style="padding:10px;"></div>
@@ -58,7 +57,7 @@
     (function() {
         var d = document, s = d.createElement('script');
 
-        s.src = 'https://rubymadscience.disqus.com/embed.js';
+        s.src = 'https://justtheusefulbits.disqus.com/embed.js';
 
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
@@ -70,6 +69,5 @@
         comments powered by Disqus.
     </a>
 </noscript>
--->
   <% end %>
 <% end %>

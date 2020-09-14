@@ -4,7 +4,6 @@
         <a href="<%= post.url %>" rel="bookmark"><%= post.data.title %></a>
     </h2>
     <time class="published" datetime="<%= post.date.strftime("%Y-%m-%d") %>"><%= post.date.strftime("%B %-d, %Y") %></time>
-    <!-- <a href="<%= post.url + "#disqus_thread" %>" data-disqus-identifier="<%= disqus_id %>">Comments</a> -->
 
     <div class="card-body">
         <% if post.data.episode_image %>
@@ -24,7 +23,9 @@
             <% end %>
         </p>-->
 
-        <a href="<%= post.url %>"><button class="btn btn-primary">Read more</button></a>
+        <a href="<%= post.url %>"><button class="btn btn-primary">Read more</button></a><br/>
+
+        <a href="<%= post.url + "#disqus_thread" %>" data-disqus-identifier="<%= disqus_id %>">Comments</a>
     </div>
 
 </div>
