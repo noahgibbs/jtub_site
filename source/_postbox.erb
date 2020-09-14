@@ -1,34 +1,30 @@
 <% disqus_id = post.data.disqus_id ? post.data.disqus_id : ("https://codefol.io" + post.url.chomp("/")) %>
-<article class="post">
-    <header class="post-header">
-        <div class="post-meta">
-            <time class="published" datetime="<%= post.date.strftime("%Y-%m-%d") %>"><%= post.date.strftime("%B %-d, %Y") %></time>
-            <a href="<%= post.url + "#disqus_thread" %>" data-disqus-identifier="<%= disqus_id %>">Comments</a>
-        </div><!-- .post-meta -->
-        <h2 class="post-title">
-            <a href="<%= post.url %>" rel="bookmark"><%= post.data.title %></a>
-        </h2>
-    </header><!-- .post-header -->
+<div class="post card">
+    <h2 class="card-title post-title">
+        <a href="<%= post.url %>" rel="bookmark"><%= post.data.title %></a>
+    </h2>
+    <time class="published" datetime="<%= post.date.strftime("%Y-%m-%d") %>"><%= post.date.strftime("%B %-d, %Y") %></time>
+    <!-- <a href="<%= post.url + "#disqus_thread" %>" data-disqus-identifier="<%= disqus_id %>">Comments</a> -->
 
-    <div class="post-content">
+    <div class="card-body">
         <% if post.data.episode_image %>
           <img src="<%= post.data.episode_image %>" class="front-page-portrait" />
         <% end %>
         <% if post.data.anchor_fm_embed %>
-            <iframe src="https://anchor.fm/just-the-useful-bits/embed/episodes/<%= post.data.anchor_fm_embed %>" height="102px" width="400px" frameborder="0" scrolling="no"></iframe>
+            <iframe class="audio-embed" src="https://anchor.fm/just-the-useful-bits/embed/episodes/<%= post.data.anchor_fm_embed %>" height="102px" width="400px" frameborder="0" scrolling="no"></iframe>
             <br/><a href="https://anchor.fm/just-the-useful-bits/episodes/<%= post.data.anchor_fm_embed %>">(Anchor.fm link)</a>
         <% end %>
         <div class="clearfix"></div>
 
-        <p><%= post.data.quick_summary || "" %></p>
+        <p class="card-text"><%= post.data.quick_summary || "" %></p>
 
-        <p class="post-tags">
+        <!-- <p class="post-tags">
             <% post.tags.each do |tag| %>
                 <a href='<%= tag_path(tag) %>'><%= tag %></a>
             <% end %>
-        </p>
+        </p>-->
 
         <a href="<%= post.url %>"><button class="btn btn-primary">Read more</button></a>
-    </div><!-- .post-content -->
+    </div>
 
-</article><!-- .post -->
+</div>
