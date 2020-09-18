@@ -9,6 +9,10 @@
       <% if current_page.respond_to?(:date) %>
         <span class="card-body text-muted"><%= current_page.date.strftime('%b %e %Y') %></span>
       <% end %>
+
+      <% if current_page.data.editor %>
+        Edited by <%= current_page.data.editor %>
+      <% end %>
     </div>
     <div class="card-body">
         <% if current_page.data.anchor_fm_embed %>

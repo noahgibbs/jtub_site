@@ -17,12 +17,6 @@
 
         <p class="card-text"><%= post.data.quick_summary || "" %></p>
 
-        <!-- <p class="post-tags">
-            <% post.tags.each do |tag| %>
-                <a href='<%= tag_path(tag) %>'><%= tag %></a>
-            <% end %>
-        </p>-->
-
         <a href="<%= post.url %>"><button class="btn btn-primary">Read more</button></a><br/>
 
         <a href="<%= post.url + "#disqus_thread" %>" data-disqus-identifier="<%= disqus_id %>">Comments</a>
