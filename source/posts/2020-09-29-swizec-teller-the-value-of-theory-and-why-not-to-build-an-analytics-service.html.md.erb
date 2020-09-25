@@ -1,0 +1,366 @@
+---
+title: "Swizec Teller: The Value of Theory and Why Not to Build an Analytics Service"
+anchor_fm_embed:
+episode_image: /img/swizec_259_460.jpg
+quick_summary: "Swizec and I talk about his theory-heavy education in Slovenia and how extremely useful it's been to him. We also talk about educational overengineering, automata theory, why NoSQL is usually a mistake and whether online education has jumped the shark."
+---
+
+## Links We Mention
+
+* [Swizec Teller's web site](https://swizec.com)
+* [Swizec Teller's Twitter](https://twitter.com/swizec)
+* [Charles Bukowski](https://en.wikipedia.org/wiki/Charles_Bukowski)
+* [Bologna Process](https://en.wikipedia.org/wiki/Bologna_Process)
+* [Automata Theory](https://en.wikipedia.org/wiki/Automata_theory)
+* [Truth Tables](https://en.wikipedia.org/wiki/Truth_table)
+* [State Machine](https://en.wikipedia.org/wiki/Finite-state_machine)
+* [Turing Machine](https://en.wikipedia.org/wiki/Turing_machine)
+* [Cellular Automata](https://en.wikipedia.org/wiki/Cellular_automaton)
+* [Pushdown Automata](https://en.wikipedia.org/wiki/Pushdown_automaton)
+* [Domain-Specific Languages (DSLs)](https://en.wikipedia.org/wiki/Domain-specific_language)
+* [Drew Houston](https://en.wikipedia.org/wiki/Drew_Houston)
+* [Homebrew](https://brew.sh/)
+* [Decision Trees](https://en.wikipedia.org/wiki/Decision_tree)
+* [Honeycomb.io](https://honeycomb.io)
+* [Google BigTable whitepaper](https://static.googleusercontent.com/media/research.google.com/en//archive/bigtable-osdi06.pdf)
+* [DynamoDB whitepaper](https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf)
+* [Eventual Consistency](https://en.wikipedia.org/wiki/Eventual_consistency)
+* [High-Performance MySQL](https://www.oreilly.com/library/view/high-performance-mysql/9781449332471/)
+* [Michael Stonebraker](https://en.wikipedia.org/wiki/Michael_Stonebraker) (who I refer to as "Stoner" - d'oh!)
+* [Newton's Method](https://en.wikipedia.org/wiki/Newton%27s_method)
+* [GNU Octave](https://www.gnu.org/software/octave/)
+* [Neural Networks](https://en.wikipedia.org/wiki/Artificial_neural_network)
+* [Sigmoid function](https://en.wikipedia.org/wiki/Sigmoid_function)
+* [Breadth-First Traversal](https://en.wikipedia.org/wiki/Breadth-first_search)
+* [Traveling Salesman Problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem)
+* [XKCD: Academia vs Business](https://xkcd.com/664/)
+* [Software Engineering at Google](https://www.amazon.co.uk/Software-Engineering-Google-Lessons-Programming/dp/1492082791)
+* [30x500](https://30x500.com/academy/)
+* [Zero to Launch (now retired in favour of 'Earnable')](https://growthlab.com/ztl/reviews/)
+
+## Transcript
+
+Noah Gibbs: Hi, I'm Noah Gibbs. And this is Computer Science: Just the Useful Bits. I'm here with Swizec Teller. And we're here to talk about the useful bits of computer science. So Swizec, tell me a little bit about how you learned to do what you do, you know, how you learned to code.
+
+Swizec Teller: I'm Swiz, by the way. I kind of like it if Americans say Swiz instead of Swizec. That's because it's easier for them. So how I learned computer science is kind of a long topic. I started when I was nine, with a computer class that was offered at my elementary school, by this institute of computer science education, it was pretty great. I hear you don't have them in the US. I think I was pretty lucky in that. And it was a class taught by proper computer scientists who were pretty much at the beginning of the industry. Not the beginning of the whole industry. But this was probably '95? 96? So early times before the internet, or at least before the internet in my neck of the woods. So I started with those classes, kept doing that for a while. Then I went to a computer engineering slash science high school, which is like general high school with more emphasis on computers and sciency stuff. And then I went to an actual comp sci college, where I was, in fact, early enough that a lot of my professors were the founding fathers of the faculty, because I think maybe it was founded 10 years before I started before that it was just computer classes at the local electrical engineering college. So we still shared the electrical engineering building with them had all this a lot of the same professors. But I got to focus on actual hardcore computer science, which was really cool.
+
+Noah Gibbs: It sounds really cool. Excellent. So yeah, that sounds like you got a pretty seriously first rate education in a lot of the basics. I assume they hit a lot of algorithms and data structures.
+
+Swizec Teller: Oh, yeah.
+
+Noah Gibbs: The kind of things you expect from a from a college, but... Nice!
+
+Swizec Teller: Yeah, so one of the things I like to tell people when they complain, "I did comp sci in college, and I learned nothing about how to write software..." A thing we did in Slovenia was that my high school was a lot more software engineering focused. We did IT, we did informatics, I learned all about how to set up a network, a little bit about how to write software, we learned... we even learned assembly for an old Motorola that was about 20 years out of date by the time we learned this. It was really fun to be like, wait, eight kilobytes of memory is like infinite if you're writing assembly by hand. What, what are we doing? Why can't I use my 16 megs of RAM usefully? Now I have 32 gigs and I complain sometimes. But yeah, the the college itself was really cool, because it was very computer science focused and not so much software engineering focused. So I think I did maybe 10 different types of math, a bunch of different algorithms, and a lot of computational theory, which was one of my favorite subjects. And then we did a little bit of Java, and some C, a lot of assembler. And for some reason, we had a project management class, that was mandatory. Everyone treated it kind of as a bullshit write-off class, which was awesome.
+
+Noah Gibbs: Sure, That actually sounds really useful. I mean, as a kind of a constellation of topics that sounds really useful. Neat! It hit the theory hard, but then it also had some practical stuff. And often you kind of get a lot of one a lot of the other, but not so much of both.
+
+Swizec Teller: What Slovenia does differently, or at least it did differently when I started college. And how I think it works in most of the US is that we didn't have elective classes. You chose your faculty, or you chose your major, which for me was computer science. And then it was, here are the 10 classes you're taking this year. And these are the 10 classes you're taking next year. So for the first two years, it was completely structured. And there were a lot of classes that were very clearly designed just to make you drop out, like learning quantum physics in the second semester of the first year and learning not just about computers, but also how computers work on a physical level. And I will never, never forget that. A transistor is literally just a diode. And it works because of quantum tunneling. I don't remember how the how the math works anymore, but I remember chemistry from high school finally made sense. I was like, so that's what a covalent bond is. It makes so much more sense when you explain it with physics.
+
+Noah Gibbs: I forget where I heard it. But somebody said that all research chemistry is physics and all research chemists know it.
+
+Swizec Teller: Yeah, exactly. Yeah. And everything is just applied mathematics. No, but I had a very old school kind of approach to college in my early years. Like professors who were... "There's 100 of you here. 10 of you will pass this exam. The rest get to take it next time." I think overall the drop off, I think... It was a four year degree. When I started, they said the average completion time is seven and a half years. And something like 40% never finished because companies poach them out of third and fourth year and they start working. And they're like, what college?
+
+Noah Gibbs: So just just out of curiosity, if you took... I mean, you said average completion time was something like seven and a half years. If you took too much longer than that, did they kick you out or start expiring your credits? I mean, was there kind of a hard deadline in it?
+
+Swizec Teller: There's no exact hard deadline. There was a huge rush of people started my college in the 90s, when I was in third or fourth year, because the faculty said, we are ending the option to finish credits for those all students. So there was a big rush then. But one of the nice things is that college in Slovenia is free. And in fact, is even subsidized. So it's in your best interest to at least efficiently stay as student as long as possible. And those benefits cut out when you're 26. Okay, so I'm sure that helped.
+
+Noah Gibbs: Several aspects of that are interesting to me, because they are more like how grad school works in the United States rather than undergrad. Interesting. Yeah, grad school often doesn't have tuition and has a stipend. But then you have to do work for the university. You're usually basically an undergrad teacher in return for your tuition. But it's also often much more set not so much by your major as by your thesis advisor, as by, you know...
+
+Swizec Teller: Yeah.
+
+Noah Gibbs: Yeah, exactly.
+
+Swizec Teller: We didn't have a stipend. What we did have were benefits that the government gives, if you're officially a quote, unquote, full time student, you get free health care, you don't have to pay taxes, you get subsidies on food, you can like food certificates that you can use at restaurants around the city. Because it was a very European kind of university. It's called I think it's the faculty of computer science in the University of Ljubljana in Slovenia. And it's basically the entire city is the campus. So it's the capital city of the country, and it has faculty spread out all across the entire city. So it's a huge student town. I think official population of the city is like 300,000. And every year, an additional hundred thousand students come to live there.
+
+Noah Gibbs: Okay, neat. We talk about University towns in the US, but we don't usually mean to quite that extent.
+
+Swizec Teller: It's like it's literally the capital city, and half of it is students. So you can basically go partying anywhere in the city in evenings or in any restaurant, and have the people you meet that are your age are students at the same university as you.
+
+Noah Gibbs: Sounds good. That would probably make me feel very old if I lived there or showed up there now.
+
+Swizec Teller: Yeah, maybe.
+
+Noah Gibbs: It sounds like a great place to be a student.
+
+Swizec Teller: Oh, yeah, it was fantastic. But yeah, like in terms of the actual courses, it was really great, because I got to, they forced me to go into a lot of topics, especially mathematic topics that I never would have researched on my own, which I hated and despised at the time, and thought this was terrible and useless. And now I think, Wow, that was actually really cool. It's super useful. And there's so many things that are easier at work when you have a fit, or at least I feel like when you have a little bit of computer science background, not too much, but just what you as [Bukowski](https://en.wikipedia.org/wiki/Charles_Bukowski) or other people like to say... "The good shit stays."
+
+Noah Gibbs: That's a very Bukowski thing to say, yeah. Nice. Yeah. It's one of the weird things about all this. One of the reasons I think it's worth talking to a lot of people, you know, on a podcast repeatedly about it is the hard part of recognizing, sometimes, you know, whether your education did well by you ss there are a lot of opportunities where... If you don't know the thing, you sometimes miss the opportunity completely. You know, if you if you don't know about compilers, you don't necessarily know where a compiler would have been the right tool for a problem. You just kind of look at the problem and go, That's hard. It looks like it's annoying. I'm not gonna touch it... Without saying, okay, a compiler would have been a good approach that might have made this easier.
+
+Swizec Teller: Yeah, that's exactly it. I see a lot of people on the internet, especially on Twitter, where people like to be very loud. say, oh, computer science is useless. I never use any algorithms at work. I never do any computer science. And it's like, one, maybe you're not working on hard enough problems, which is totally fine. Not-hard problems pay a lot of money. Or maybe you're just don't realize you're using it, or you would have used it if you knew it existed.
+
+Noah Gibbs: Yeah, and I do wonder how much of that's going on, though. I think a lot of it is the first thing you said is that there are a lot of very lucrative jobs that don't require a lot of algorithmic complexity. You know, I feel the same way about math. Like I have a math degree and there are times I certainly look at it and go, okay, you know, this is, this is a math thing. I can apply it, I can just do it. But the hard math problems, the ones where the math degree really helps are often things where I've kind of made a mistake earlier to get to the point where I need it. You know, if the same kind of thing is you know, if you're strong enough, you might recognize a lot of opportunities to lift a giant boulder or flip a car or push something out of the way. But you can also plan your life so that those aren't major activities.
+
+Swizec Teller: That's true. I mean, looking back on my computer, on my degree it was it was funny at the time. And now it kind of feels maybe like we were a little bit gatekeep-ey, which is not great. But we always made fun, kind of made fun or look down upon people who took their computer science degree and then just got a job. This is not for a job, you're supposed to become an academic researcher of computer science and push the field forward. Only the failures go and get jobs in industry. And now here we all are, we were like wait a minute. Industry pay six figures, academia pays, maybe 30k a year? I think I'm gonna go to industry.
+
+Noah Gibbs: Yeah, there's there's a lot of that. And yeah, it does. It does start to seem really self serving in retrospect, I mean, for, on the university's part. But yeah, the US too. It's very similar that way.
+
+Swizec Teller: Yeah, it's, it's very funny. But like, an interesting topic, I had one really useful thing from that I learned in college. And I actually had to, I probably learned it in my fourth year of college, the best, when I actually dropped it, I actually never graduated. So I technically dropped out a couple times. Europe went through a educational reform in the 2010 ish area, where they switched to the [Bologna system](https://en.wikipedia.org/wiki/Bologna_Process). So we went from four year university degrees plus a two year Master's plus a two year PhD, we went to a three year bachelor's, plus a two year Master's, so you get something that's kind of more similar to what you would get at in the US, I think, or maybe the four year university was more equivalent to what you have in the Ivy Leagues here. Not really sure. But we were told that it's more similar to how it works in the US where you do the three years plus the two years, and then you have a international masters, versus before you had a four year degree and you got a bachelor's, but it was actually the same as an as a proper master's degree in the US like what they do in post grad. Okay, so I didn't have enough credits to advance into the next one. So I dropped out, and they pushed me into the three year version, I didn't have enough credits for the two, for the two year post bachelor version, but I had enough credits to be able to pick all of my classes. So because I was there to learn not for my degree, I took all of the credits from, from the masters version, not from the bachelors version. So I got to learn a lot of really interesting stuff about computation theory and such. And what I was getting at is that [automatic theory](https://en.wikipedia.org/wiki/Automata_theory), or however you pronounce that -- automata -- that was probably the second most useful thing I learned in, in my five years of college. The first was, [truth tables](https://en.wikipedia.org/wiki/Truth_table), where you write all of the combinations of an expression, and it helps you minimize them and reason about things. The second best was automata theory. Because it teaches you how to what you need to solve different classes of problems. And when you can recognize those things, when you can look at a piece of code and be like, Oh, I can solve this with a [state machine](https://en.wikipedia.org/wiki/Finite-state_machine). Or, oh, this needs a state machine plus a stack because AI needs to be context aware, it just makes a lot of coding much easier, even on web on the web, or if you're doing typical business stuff. Because a lot of things map to that. So you know, okay, I need, I need a full [Turing machine](https://en.wikipedia.org/wiki/Turing_machine) for this, I need a state machine is good enough for that, and so on. And it helps you very quickly map between problems and classes of solutions.
+
+Noah Gibbs: Okay, I'm trying to tell if this is something I've actually gotten in my education or not. When you said automata theory, the first thing that went through my head was [Cellular Automata](https://en.wikipedia.org/wiki/Cellular_automaton), which is completely different from, from what you mean, I think,
+
+Swizec Teller: I think cellular automata are a class of the full automata theory.
+
+Noah Gibbs: Yeah. And the other things I see listed here, [pushdown automata](https://en.wikipedia.org/wiki/Pushdown_automaton), finite state machines, combinational logic, those I'm familiar with. Turing machine is the outside I know, as a theoretical construct, but of course I don't... You don't usually see the sort of tape-based Turing machine used as a literal solution to a problem very often.
+
+Swizec Teller: Yes, that's true. Although they are very fun to build, because they're super simple.
+
+Noah Gibbs: Yes.
+
+Swizec Teller: But the idea is that Turing machines can solve all solvable problems.
+
+Noah Gibbs: Yeah.
+
+Swizec Teller: And state machines can't. But state machines are super useful for certain classes of problems that you encounter a lot on the web, like, little interactions, or very often when if you try to solve maybe transitions or UI logic, if you try to solve it with the full power of JavaScript, you're shooting yourself in the foot because it's too complicated and not a good fit for the problem. But if you use a state machine, then you're like, the solution just falls out.
+
+Noah Gibbs: Okay, so then for automata theory, maybe, maybe a rephrase of basically the same thing would be for a restricted limited class of problem, you'll often have a much easier time solving it with a restricted limited class of solutions designed for that problem.
+
+Swizec Teller: Yes, that's exactly it.
+
+Noah Gibbs: Yeah, I'm a Ruby guy. So I immediately think of [DSLs](https://en.wikipedia.org/wiki/Domain-specific_language). But of course, very often, for things like state machines, what you do in Ruby, is you build a DSL for it. And in fact, I think of a couple of those off the top of my head.
+
+Swizec Teller: That's the other thing that... I don't know if I learned this in my computer science degree or, or through practice. But it's a popular quote by a lot of smart people who say that once you pick the right data structure, the solution is easy. And that's where I think for state machines, DSLs are a terrible solution. And hashmaps are a great solution.
+
+Noah Gibbs: I can see that. I forget who it is that said, ["show me your code and I'll ask to see your data. Show me your data and I don't need to see your code."](http://www.dreamsongs.com/ObjectsHaveNotFailedNarr.html)
+
+Swizec Teller: Yeah, exactly. I think that's when you can really learn in college, they can tell it to you. But you won't... It's not going to click until you shoot yourself in the foot a couple hundred times.
+
+Noah Gibbs: That's fair. There are certainly a lot of things like that. Okay, great. Well, this is, this is good. I think I know of automata theory from having learned it. But I if I knew this name for it, I completely forgot it. So it's always, always a good day when I learned something interesting. Great. We talked a bit about truth tables, although if you wanted to talk more about that, that's fine. The other things you mentioned being interested in were trees and graphs. And I don't think we have touched those yet.
+
+Swizec Teller: That's true. So there's a famous tweet by the guy who founded Dropbox and became very rich and clearly built an amazing piece of software that is now being ruined by VCs and chasing profits.
+
+Noah Gibbs: [Drew Houston](https://en.wikipedia.org/wiki/Drew_Houston).
+
+Swizec Teller: Yeah, as it usually happens. So sorry, it wasn't Dropbox, it was the guy who made Homebrew, which is also another piece of, another great piece of software. Homebrew is what we in the Mac world, use for, as a package manager to install different software for those of you who don't know. And the guy who created it, went in for Google interviews on-site, didn't get it, and then wrote a tweet that got many, many thousands retweets, it goes something like... [All of our engineers use your software, but you can't invert the binary tree on a whiteboard, so fuck you](https://twitter.com/mxcl/status/608682016205344768?lang=en). Something like that.
+
+Noah Gibbs: I remember that.
+
+Swizec Teller: That has now become a part of software engineering lore, especially on web development, especially from people who went into industry and did the smart thing of getting paper instead of chasing knowledge. Knowledge is still fine, but paper gets you a lot of knowledge that you don't need to get yourself. So it's become this kind of meme that whiteboard interviews are terrible, and algorithmic interviews are horrible. And writing algorithms is useless because you never get to do that stuff in real life. Turns out that knowing at least a little bit about trees, and graphs probably solves 80% or 90%, of the type of problems that we have on the web. I think most business logic can be traced back to... Yeah, this is a tree data structure. And the code you're writing is literally just traversing a tree of... Think of a [decision tree](https://en.wikipedia.org/wiki/Decision_tree). Decision Trees are specifically an application of trees to machine learning. But it's also how all business processes work. You start at the top, and then you say, do I have A or B available? And you go to the B branch, do I now have C or D available and you go to the C branch. And it turns out that all bureaucracy is essentially tree traversal and decision trees. And it turns out that if you model your code that way, it becomes a lot easier to maintain, and a lot easier to improve. This is something that took me a couple of years of practice to realize, I used to always write these complex logics and try to encode everything and then the business changed their mind. And I was like crap, my entire application blew up and I have to go refactor everything. This is two months of work. So instead, I started actually modeling everything as trees and telling my, my business people, you know what, I don't care, just put it into database. And my code will go across it. If you want to swap something, if you want to change a step to be before a different step or whatever, I don't care, you just rewired in database, and my code will do the right thing. Because I'm not hard coding any of the logic, I'm literally letting the business team decide the logic on their own. And I found that that that to be a really useful model. Now obviously, in the in the browser itself, you have the DOM tree, so everything is a tree anyway, an insight that I got over the last several years of working in startups full time instead of just freelancing on one off projects is that this long term maintenance becomes a lot easier if you let weird business logic be encoded as data instead of as actual code.
+
+Noah Gibbs: That makes a lot of sense. The, the Lisp folks would absolutely agree with you on that they were kind of the the original faction. Have, yeah, that very often your data is effectively a little function. So just let it be a function.
+
+Swizec Teller: Yeah, exactly, I find that that makes a lot of problems a lot easier. And then graphs have some special cases in them. And they are a lot of fun. And I think you probably get to graphs a lot less than you do to trees, when it comes to business logic and JSON bureaucracy as most modern programming is. But as soon as you have a loop in your tree, that's a graph. Or when you have things that are connected between each other, that's a graph or hell, if you look at your relational database, that is a graph. You have many too many tables, that many to many table is an edge between two nodes in the graph with metadata. Yeah. And if you think about it, that way, your life will be a lot easier.
+
+Noah Gibbs: I can see that. Definitely treating your database as a graph can be a giant headache, but that's mostly because SQL is fairly poorly adapted to a lot of graph algorithms.
+
+Swizec Teller: That's true. That's true. Yeah, graph algorithms can get pretty hairy. I honestly haven't had a lot of opportunity for really complex graph algorithms. Usually iterating, between edges or iterating between nodes is probably 80% of what you need to know about graphs. Yeah, just choose which one you're iterating over. And the rest of your algorithm usually falls out.
+
+Noah Gibbs: Yeah. And I mean, there's, there's clearly a demand for exactly what you're talking about, you know, treating the database that way. You can see the various places where people try to do it, you know, one of the one of the hard parts about a NoSQL document-based database like say MongoDB, is that the first thing you're going to do is cut those loops and turn your graph into a into a tree. And if it were easy to do, then it wouldn't be such a pain to you know, set up your schema that way. Yep, there are specific, you know, graph databases that exist specifically to run graph algorithms on a on a on a database type entries. They don't work terribly well, but...
+
+Swizec Teller: I mean, the funny part about graph databases is that all of the good ones are built on top of Postgres, and they work on relational data. And in terms of Mongo, Postgres now has better JSON performance and behavior than Mongo does. And I think Mongo still loses your data occasionally, just because it can.
+
+Noah Gibbs: You can configure it not to, I don't remember if it's the default anymore. It's been a lot of years since I've used Mongo. Because I've spent a lot of those years with operations people, which is a fast way to understand why MongoDB is a very bad idea. Operations, people tend to tend to have a lot of MongoDB horror stories if they've ever used it.
+
+Swizec Teller: Yeah, and the other horror stories story about NoSQL is that a lot of people start using no SQL because it's easy to get started and easy to set up. Yeah. And then they spend probably half of their time reinventing relations, acid compliance, foreign keys, and all of that stuff. Because it turns out that most data is relational when when it comes to business logic.
+
+Noah Gibbs: Yeah, yeah, absolutely. Early NoSQL successes, the question tended to be why they were so desperate for some of the advantages of it to actually give that up, because, yeah, most people shouldn't don't.
+
+Swizec Teller: I don't think most people realize this, but you're probably not Facebook or Google. And Postgres is plenty fast enough for what you're doing.
+
+Noah Gibbs: Yeah. Yeah, absolutely.
+
+Swizec Teller: And if it's not, just give Amazon an extra 10 bucks a month, and they will give you a bigger, faster database.
+
+Noah Gibbs: Yeah. The, the one exception I worked on where it seemed like it was justified was a big analytics service. And the nice thing about an analytics service is you need a massive write rate, you don't need great table performance, your joins can be approximate. And if you throw away a small percentage of your data, that's just not a problem. And so that actually, it would have been in the MongoDB sweet spot, actually, although we used Cassandra, which was also good.
+
+Swizec Teller: I have horror stories about that we started as Oh, Mixpanel is definitely going to go out of business before our tiny little startup goes out of business. So we built a wrapper on Mixpanel. And then we're like, well, since we're building a wrapper, it would be really useful if we store our logs or our events in the database, so we can join them with our other data, which was in fact, super useful and fantastic. And then fast forward a few years. Oh, look, 60 70% of our traffic is events and logs. And we're writing a couple million rows per day into this table in Postgres. And we have to use partitioning and all of the weird things are happening. And now we've got to the point where Postgres has started dropping, stuff you write into into the table, and sometimes there's no error, but the result isn't in the table. So then you build a bunch of logic on top of that, to keep retrying and make sure that everything's clean. And yes, that was a very painful experience, because we had the bright idea that we want a lot of writes, not a lot of reads, absolutely no data loss and joins with the rest of the database. Also fuzz.... fuzzy JSON as well.
+
+Noah Gibbs: Ouch. Okay, yeah, that's a that's a hard problem.
+
+Swizec Teller: It turns out it's a very hard problem. But I learned a lot.
+
+Noah Gibbs: Well, yeah, the nice thing about hard problems is you do tend to come out smarter on the other side.
+
+Swizec Teller: Yeah, I learned I am never building my own analytics service ever again.
+
+Noah Gibbs: That's a wonderful thing to learn. There, there are some really good ones these day, these days, you know, a number of years ago, now, I'm not going to be depressed and actually do the math and figure out how much older I am. But a number of years ago now, you know, we built a, we built a an analytics observability type system, which now I would say was a lot like [Honeycomb](https://honeycomb.io), except we hadn't figured out that you needed to do the downsampling properly the way they did. And one of the glorious things about being able to say "it's like Honeycomb" is now Honeycomb exists, and there's no reason to ever build that again.
+
+Swizec Teller: Nice. Yeah, the... the other thing, whenever you're tempted to write your own analytics or logging system, just remember that Netflix spends, I think I heard a rumor that they spend around five to $10 million a year on salaries for their observability not for the tools just for salaries for people who keep it running.
+
+Noah Gibbs: Yeah, no, I believe that for Netflix in particular, I especially believe that there. There may be a number one ahead of Netflix for reliability in the world. But if so I couldn't tell you what it is. Netflix is ahead of every other company where I know for both of them. I mean, Google is ***almost*** at their level.
+
+Swizec Teller: Yeah, it's it's pretty crazy. So you know, that's, that's the scale of the problem you're taking on when you decide "I'm gonna build my analytic service." Another fun thing I wanted to mention you, we mentioned NoSQL earlier, earlier, and relational databases. When I was in college, was at the start of the hype cycle for NoSQL. And when I was really deep into researching those, this was back when Google first published a [BigTable paper](https://static.googleusercontent.com/media/research.google.com/en//archive/bigtable-osdi06.pdf), DynamoDB, the [original DynamoDB paper came out](https://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf), Cassandra came out, Facebook was all like, well, we invented, what was it, [eventual consistency](https://en.wikipedia.org/wiki/Eventual_consistency) and all of that cool stuff. This was all brand new back then. It was amazing and exciting. And I was looking into it. And I was like, at the same time, I was taking a semester class on relational databases and database modeling, which was also a really useful class. If you've never taken a class on SQL, or relational databases, please find a course online or even go take it to the community college. This probably the third most useful thing I learned in school, so much that I forget that I ever learned it.
+
+Noah Gibbs: The other thing I'll bring up is if anybody is really feeling like they can't go take a class on that, the book [High Performance MySQL](https://www.oreilly.com/library/view/high-performance-mysql/9781449332471/) from O'Reilly is absolutely amazing. I mean, it is, it is MySQL specific, but what you really want is to see how one database is implemented. Because from from there, it's all the [Stoner](https://en.wikipedia.org/wiki/Michael_Stonebraker) architecture, it's all the I'm forgetting the guy's first name, but there's one person who basically has designed the architecture of every modern database. So they all work in a fairly similar way.
+
+Swizec Teller: Yeah, that's true. And relational data modeling, in particular is a super useful skill to have. Anyway, so I had this class, and NoSQL was the future, obviously. And I was chatting with my professionals like, why aren't we doing any NoSQL? What the hell? Why are we learning this old crap? relational databases? Nobody's ever going to use this again. My professor goes, What's NoSQL? I've never heard of that. What are you talking about? Like, you know, JSON databases, Mongo, document storage. He's like what? Okay, you know what? You prepare a seminar on this, and I will give you one of my classes, and you get to teach this to the entire class. And I did I prepare the presentation, I taught NoSQL to the entire class. I think it went well, to their dismay, it ended up on the final. I was not aware it would be on the final. And nobody else was aware, it would be on the final. They were like, what is this shit? This was just some random student's presenting something cool. Why is this on the final? But apparently next year, NoSQL was part of the standard curriculum.
+
+Noah Gibbs: That's great to hear. Well, congratulations. Well done.
+
+Swizec Teller: Thank you.
+
+Noah Gibbs: I gave one random, you know, guest lecture as a student in one of my classes. It didn't go as well as that. So well done.
+
+Swizec Teller: Yeah, I mean, it, I think it was more. I hope the professor thought it better than I did next year. But I think it was more like more him trying to see what this is all about. Because there's this guy who's really excited about it. And so clearly, something's going on.
+
+Noah Gibbs: Now, that's, that's actually a great idea. I mean, one thing about being a professor, you're not out in random, you know, startup land, working on newer problems that haven't really got an established solution yet. And so Exactly, yeah. inviting students in to talk about it's a great idea.
+
+Swizec Teller: Yeah, it was really cool. Actually, that's the thing I both enjoyed and screwed up about my college experience was that my professors were great. I didn't take them as seriously as I should have back then. And I was still kind of, you know, a young rebellious, early 20 something dude, and I was like, screw all these professors they don't know crap. They're all, they're out of date. They're, they're dinosaurs. They barely know what they're doing. And I had kind of carried on from high school, a sort of adversarial relationship to school and grades and stuff. But if I just chatted with them more and talk to them, I probably would have gotten so much more out of my out of college. Instead of looking at them as gatekeepers to great and boring lectures. A lot of them were really cool.
+
+Noah Gibbs: When you say you carried that on from high school, you know, looking back on in high school is about the worst preparation I can imagine for doing a good job of engaging with college.
+
+Swizec Teller: Yeah, definitely. The big difference between college and high school is that in college, your professors are no longer your authority. They have some authority, but they're more like, it's a lot more collaborative, if you choose to use it that way.
+
+Noah Gibbs: Yeah, they're the older flavor of your peers.
+
+Swizec Teller: Yeah, exactly. And at least in my college, maybe this is because we did college in Slovenian. So they had an excuse to do it. But most of them taught from textbooks, they wrote themselves, a lot of it was yes, I spent the last 30 years researching this topic. And now I'm giving two semester classes to the first and second years, and I have my grad students, and maybe a class in fourth year. The peasants in first year are kind of lame, and I don't care about them as much the cool kids in the masters and PhDs are great. But you know, the, the knowledge and the depth is still there. Well, there was one professor who was really crappy, but most of them, you could just keep asking and digging, and you would never get to an I don't know, at most you would get to, I'm going to look that up. And then they would actually come back the next lecture and say, okay, so you asked this question last time. Here's the answer. I went, and I read like, five papers on it. This is the answer.
+
+Noah Gibbs: Nice. That sounds wonderful. I mean, the [best professors at CMU](https://www.cmu.edu/math/people/faculty/hrusa.html), were definitely also the ones who wrote their own textbooks, or who taught from their own white papers. So kind of the same thing. And occasionally, we'd get an unsatisfying answer, like, well, that's an open research problem. But you know, that's an unsatisfying answer to Western civilization in general, not just, you know, to you. Those those were kind of the best classes, I had one class in the math department on differential equations that felt like that. Because -- stop me if you're, if you, you know, find this boring -- but differential equations, you know, you take the class, and you learn how to do a whole bunch of classes of problems. And then you get to the next class, and they say, Okay, that was all the differential equations it turns out humans are able to solve. We're going to review it over two weeks, but like, those are the older classes of differential equations, humans can solve. So now we're going to start looking at what we can prove or say about problems that we know provably cannot be solved in closed form. Now, let's do something interesting.
+
+Swizec Teller: Yes, I remember that I was in high school, we were always taught differentials are easy. You just do this, and you follow this algorithm, and it's done. And then in college, it was like, yeah, that's kind of true. Here's what happens if you have a three dimensional or a four dimensional or 50 dimensional function, you can still do it. It's super fun. And then somehow, later on through, like, between the lines learn, oh, yeah, we're, by the way we are, we spend a lot of time making very specific functions that you can even solve, because otherwise it all breaks down. And we don't... We have no idea how any of this works.
+
+Noah Gibbs: Yep. It's lovely. Because there's a whole other approach that we never did in my math classes. But we did in a lot of my computer science classes, which is basically the numerical equivalent.
+
+Swizec Teller: I loved my numerical math class.
+
+Noah Gibbs: I yeah, I had one numerical methods class that was nominally about that. And then I had a couple of classes in computer graphics and physics simulation, which, of course, you have to do numerically, you know, there's not the slightest chance that you're going to come up with a system that can be solved in closed form, it's just not going to happen.
+
+Swizec Teller: Yes. Yeah, that was, that was another great thing that my college did in first year, you take linear algebra, which comes alongside your calculus classes. So you do, we did two calculus classes in my four or five years of college. And I think we're probably like five to six different mathematics classes every year. Well, so you do linear algebra where where you learn how to do all of the matrices and how that stuff works. Then in second year, you do numerical methods, where you basically do something between linear algebra and calculus, but you're using [Octave](https://www.gnu.org/software/octave/) to do it and computers to solve things. And you're like, why didn't we use this before? This is so much easier. I will never forget how upset I was when I learned that the [Newton method](https://en.wikipedia.org/wiki/Newton%27s_method) of matrix minification, meaning the Newton method, how much easier it is when you're doing it with a computer instead of by hand? Because my linear algebra exams were like, here's a 10 dimensional matrix, do this long newton algorithm by hand and you will be judged on the answer, not the process. Oh, it was terrible. I took that class that exam six times before I passed.
+
+Noah Gibbs: That would be ugly. That would take a lot of working out horrible stuff longhand.
+
+Swizec Teller: All you need to do is addition and subtraction. But if you make one mistake, it propagates and becomes larger by the end of the answer. Because the algorithm has like 50 steps for a 10 dimensional matrix.
+
+Noah Gibbs: Yeah, makes sense. Well, you've got to take the derivative at every step and then find the, find the intercept with it. And yeah, if you if you get one thing wrong, then you're finding the intercept off somewhere else. And if they give you a complicated problem, you also have to worry about coming to a different answer, because there can be more than one local minimum, like Newton's method is terrible about that.
+
+Swizec Teller: Yeah, it was, it was great. And but then in the in the numerical class, it was fantastic. Because you just wrote Octave code for it. And you were judged on what your code looks like. And it was an open book exam. So you, I literally didn't study for it. I was strong in programming, because I've been programming all my life, and I had actual work experience at the time. So I literally showed up at the exam, I took out my book, I was like, Oh, I know, this needs to be the Newton's method, how the hell does that work? And I looked up the algorithm in the book, and then wrote a similar algorithm in the paper, or, like, did the math with the with the thing? And I got every single answer wrong, because of some mistake or another. So what I did was add a proof that my answer is wrong next to every answer, and explain this answer is wrong. Here's what probably went went wrong. I don't have time to redo it. And I got a B+.
+
+Noah Gibbs: Well, that, okay, that's hard to complain about, really. I know, this is wrong. I have to debug it, you know, for an exam. Yeah. Okay. Yeah,
+
+Swizec Teller: I know, this is wrong. This is why it's wrong. It's often by probably around this much. And yeah, I'm not going to redo it. And then the year after that, we had a computer graphics class where we when I was fine, like, also, that's why matrices are useful. That's why I learned all that stupid linear algebra that broke my brain. And we had the machine learning class as well, that was like, oh, machine learning is literally just matrix multiplication. There's nothing special about this. I still don't know what a neuron does in a [neural network](https://en.wikipedia.org/wiki/Artificial_neural_network). But I know that it's just a multiplication of a matrix.
+
+Noah Gibbs: Yep.
+
+Swizec Teller: And I think they call it a neuron because it sounds better if you put in an AI paper.
+
+Noah Gibbs: That's part of it. The other thing is that it has a [sigmoid](https://en.wikipedia.org/wiki/Sigmoid_function) response curve that has sort of an S shaped response curve. Because it's very certain that it's wrong if you're near a zero response. And it's very certain it's right if you're near a one response. So I mean, it's that complicated, but that's not real complicated. And that turns out to be sort of similar to an actual physical neurons response. The way it's trained is completely different. But because it has that S curve response, and so does a brain neuron, they're sort of conceptually similar.
+
+Swizec Teller: That's why it's called a neuron. That makes sense, because, yeah, I asked so many people, why is it called a neuron and or what does a neuron do? And nobody could ever explain it. It was just like, yeah, this number is called the neuron. Why would because that's what it's called. And why is it the neural network? Because they're in the matrix, and they're connected together? Okay, then.
+
+Noah Gibbs: I mean, it's it. Yeah, it's it's sort of designed to simulate not exactly a brain because the brain is I forget millions or billions of neurons. It's a very, very large number. And our math is good enough to... At least when I when I was in college, our math was good enough to handle about 30 to 50, maybe a couple of hundred of those at most.
+
+Swizec Teller: Yeah, I think nowadays we have neural networks with thousands of neurons, because of GPUs. Yeah. But they're not as interconnected. Because the thing about the human brain is that yes, you have billions of neurons. But unlike a neural network, each of those neurons has millions or billions of connections. Yes, I've read theories that when there's theories that we actually have orders of magnitude more neuron connections than actual neurons in our brain.
+
+Noah Gibbs: You would expect. I mean, if you if you if you if every neuron was connected to only 1000, that should be three orders of magnitude more connections than neurons. So yeah. So yeah, that would make sense.
+
+Swizec Teller: That's your math degree coming in useful. My mind was blown. When I when I read that, that's reminds me the whole machine learning topic about why I think college was actually super useful for me, because I thought of myself as a semi advanced student. So I did a lot of racing ahead and learning things on my own. So I tried to become a self taught machine learning researcher. When I was doing my first startup in 2009, 2010. I tried to build machine learning or AI algorithms to do classification and recommendation of articles from the web, which was a really fun problem. And I learned through Wikipedia in some books, and it was great. I learned a lot. I still know a lot of details about machine learning and how AI works. So I learned a lot of trees, but I never saw the forest. And then, two years later, I took a machine learning class in college and I was like, ah, That's how those things fit together. And it was learning teaching me the forest instead of the individual trees, where it's like, you see this a lot in, especially in self taught programmers, in self taught entrepreneurs as well, in self taught anything, really. We learn a lot of details and a lot of tactics. But we never learned the mindset behind it. We never learned the... How can you create a new tactic, because if you don't know the principles behind it, you're just going to learn a bunch of random things, and you're going to keep trying them. And you see that a lot in a lot of self taught software engineers, I think, they know a lot of details, they know a lot of specific tactics, but they don't really know how it fits together. Or when they encounter a problem. They don't know a tactic that fits directly, they're lost, they don't know how to adapt a tactic, or how to combine different tactics, or how to even invent a completely new tactic. Because they, they don't have the forest, they only have the trees. And I think that's what college is really good at, because a lot of self taught goes from bottom up. And you might eventually infer the forest, but probably not without reading at least books or courses. Hopefully a mentor, what you do in college is you learn top down, you learn the forest, first you learn the structure, and it gives you like an architecture or a hierarchy where you can later tank tactics onto or where you can be like, Oh, I have a missing missing piece of knowledge there. But I know how it fits into the broader problem set of what I'm working on. So I can just go learn that tactic and add it to my toolset. That's where you see people with actual software engineering or computer science backgrounds rapidly excel beyond people who are self taught is that you can learn faster when you have an architecture where you can put different pieces of learning to.
+
+Noah Gibbs: That makes a lot of sense. that's similar to an argument I give when I'm telling people to learn unusual programming environments. The argument for learning something like Prolog isn't that you're going to use Prolog a lot day to day, you're not, you just aren't. But being able to think in a bunch of different ways and put together problems, you know, in a bunch of different ways is valuable because of the mental flexibility it gives you even if you don't use that direct approach, almost ever.
+
+Swizec Teller: It's like I always recommend people learn Haskell, not because Haskell is that useful. It's a great language. And I wish it was more practical, useful, because I love it, but teaches you how to think differently.
+
+Noah Gibbs: Absolutely does.
+
+Swizec Teller: When you can think differently, that gives you more tools, gives you a broader toolset and a lot of problems with the usual imperative, or I think it's imperative approaches to programming become a lot easier when you do it functional, or even if you just pretend you're doing it functionally.
+
+Noah Gibbs: Yeah, you know, Haskell has some very neat tricks. I dislike several specific things about the Haskell language. And I wish somebody else would steal those specific tricks, because I love the tricks, but the rest of the language is not my thing at all. But no, I agree learning it's valuable, even, even if I don't use it.
+
+Swizec Teller: Yeah, we did learn Prolog in college. I don't remember any of it other than it was thought to be the future of AI research. And then it wasn't.
+
+Noah Gibbs: There are a lot of those former futures of AI research. Yeah, there have been many of them over the years. No Prolog was the one that does [breadth first](https://en.wikipedia.org/wiki/Breadth-first_search) instead of depth first call tree traversal. So...
+
+Swizec Teller: Yeah.
+
+Noah Gibbs: Yeah. If you think of your function calls as sort of going directly through Yeah, and it does breadth first instead. So it's as though you're, it's as though you're running through your code in a very different cold order. Sort of an alternative to loops, which sounds neat, and is sort of neat. But Wow, yeah.
+
+Swizec Teller: It's great for constraints based programming, right?
+
+Noah Gibbs: It's... Yes, it's essentially your code is adding constraints.
+
+Swizec Teller: Mm hmm.
+
+Noah Gibbs: But the problem with that, of course, is it's going to run whatever its solver is on those constraints to get the answer. And so you need to be extremely intimately familiar with how it does it, or you'll constantly write infinite loops.
+
+Swizec Teller: Yep. That's another thing that constraint based programming is not used a lot day to day. But when you encounter a problem, that's a constraint problem. Like, I don't remember how to do any of that. But I can recognize a constraint problem. And when that happens, it's so much easier if I know that that exists, and that I can go look it up and use that sort of solution.
+
+Noah Gibbs: Yeah, well, have having an idea of what constraint problems can be solved by somebody is definitely really valuable.
+
+Swizec Teller: Yeah, exactly. And I think a common example of constraints problems that... Actually no, not a lot of people would run into that. But if you're building scheduling systems, or things like that, that's a very difficult constraints problem. Or here's a really interesting constraints problem that we run into every day. How many sprint points can you fit into a week?
+
+Noah Gibbs: Yeah, that's a constraint problem. And I was gonna say, if your system gets big enough or busy enough, at some point, you will run into constraints problems, or at least someone on your team will. And if they know more about it than you do, then they'll probably run into it and you'll have to use the results of their work.
+
+Swizec Teller: Yeah, exactly. And the other useful thing from college I think or from computer science in general is having a sense of computational complexity, not necessarily knowing how to do O, big O notation accurately, but just a sense, just being like, hey, the way we're solving this is probably going to be slow. If we use more than five elements, or, you know, this looks a lot like an unsolvable problem, can we soften some of the requirements to make it actually solvable? Stuff like that. And like, a good rule of thumb I use for that is, as soon as you say, the best x, you are most likely trying to solve an unsolvable problem.
+
+Noah Gibbs: That makes sense. Yeah, the word best is wonderful. Because it literally just means the best for whatever, you know, set of constraints I've got in my mind. And so yeah, it kind of defines the constraints. I like the word best. Because if somebody points at something, it says the best. I'm going to say, Ah, I like that. Because that tells me all your revealed preferences. You've just told me what what you think is best.
+
+Swizec Teller: Yeah, and a lot of those problems when you're trying to find an actual optimal solution to something are completely unsolvable. Yeah, the [Traveling Salesman Problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem), where it's what is the optimal route through the city that reaches these five people, completely unsolvable. We have proven time and again that this is an unsolvable problem, yet salesmen live and they work and they get stuff done. UPS deliver stuff pretty efficiently. And yet, there is an unsolvable problem among all of it. And it turns out that if you just say, find a good enough route through the city that hits all of the addresses for every package in this truck, instead of the optimal suddenly becomes super solvable.
+
+Noah Gibbs: Yeah, well, the Traveling Salesman Problem in particular, is horrible dark magic. Specifically, what I mean by that is if you can prove that all your distances are integers, and what you want is integers and not real numbers, not not unlimited precision. It turns out, there's a really efficient, guaranteed optimal algorithm called Concorde, that will solve it for you, as long as you don't have any fractional distances. But I mean, your distances can be large, if you do the equivalent of fixed point where you just multiply everything by 1000. And then cut off at the third decimal place. Great, fabulous, Concorde will solve it exactly. For you. Black Magic, I'm telling you,
+
+Swizec Teller: That sounds... Last I heard it was not solved. And that kind of blows my mind.
+
+Noah Gibbs: Well, the thing is that if it's only solved in an integer sense, you know, for for integer distances, and there's some limit to the precision... In an academic sense, it's not solved. Like, a university professor would hear what I said and say, yeah, that just means it's not solved and move on. Yeah. Whereas somebody who actually works in industry would say, oh, wow, they've solved it completely.
+
+Swizec Teller: Yeah, yeah, exactly. It's like, I don't give a shit about fractions. I can make anything into an integer if I want.
+
+Noah Gibbs: Yeah, if I multiply by 10,000, then I cut it off. I don't care about fractions. And I never will. Let's go.
+
+Swizec Teller: Yeah, exactly. That, that reminds me of there's a [great XKCD comic from many moons ago](https://xkcd.com/664/), where it's like, academia versus industry. Somebody gets a blender to stop. It's a blender, it had a bug running the engine forever. And they solved it. Yes. You show this to your boss, and like, oh, cool, you got the blender to stop. Great. here's, here's the next five tickets. You show it to your professor in income sound like, Oh my god, you solve the you solve the halting problem, this is going to be five papers. And you're probably going to get a Nobel Prize for this. This is amazing. you've solved the most the hardest, most fundamental problem of computer science, this breaks everything the whole field is written. Like, that's the difference.
+
+<img src="https://imgs.xkcd.com/comics/academia_vs_business.png" alt="[[A programmer sits at a desk in front of a computer. There are cans on the desk and more crushed ones on the floor.]] Programmer: I just wrote the most beautiful code of my life. They casually handed me an impossible problem. In 48 hours and 200 lines, I SOLVED it. ((Lines divide the comic into two possible end panels here, labeled \"Academia\" and \"Business.\")) [[Academia]] Professor: My god ... this will mean a half-dozen papers, a thesis or two, and a paragraph in every textbook on queueing theory! [[Business]] Boss: You got the program to stop jamming up? Great. While you\'re fixing stuff, can you get Outlook to sync with our new phones?\"
+{{Title text: Some engineer out there has solved P\=NP and it\'s locked up in an electric eggbeater calibration routine.  For every 0x5f375a86 we learn about, there are thousands we never see.}}" />
+
+Noah Gibbs: That's, yeah, that's that's a lot of the difference. Cool. So I feel like you've already answered this pretty well. But just to make sure I've asked it explicitly, do you feel like your university education prepared you well for a job doing software development?
+
+Swizec Teller: Yes. And no. My comp sci degree did not prepare me for software engineering. But that's because it was a computer science degree, not a software engineering degree. That's a different faculty. But it gave me a lot of really useful tools that I can use when I'm doing software engineering. So it's made me better at my job. But what prepared me for my job was the fact that I had programming jobs pretty much since my second year of high school. And that's what I would recommend to people, if you can, I guess in the US, it's different. If you're paying thousands upon thousands of dollars to be in college, just stay in college, and don't distract yourself. But if you if you can try to get some coding jobs on the side, or even code your own projects, do something, build something, use the skills that you're learning, because that's when you actually learn software engineering. It's on the job, because there's a lot of the engineering part that they never teach you in school because they can't, which is like, yeah, you can write code this way. But if we make you maintain that code for five years, you're definitely going to write it differently.
+
+Noah Gibbs: Yeah, and that's true, school can't teach you that one.
+
+Swizec Teller: Yeah, school cannot teach you that one. And yet there's this great book from Google called [Software Engineering at Scale or something like that](https://www.amazon.co.uk/Software-Engineering-Google-Lessons-Programming/dp/1492082791). Among the very first pages, they have a really great paragraph that goes something like, the difference between programming and software engineering is that engineering is programming over time.
+
+Noah Gibbs: That makes sense.
+
+Swizec Teller: Or, as I like to say, coding is fun. Engineering is work.
+
+Noah Gibbs: Solid. That's... Yep, I like that. Cool. So what do you do to improve these days? What do you do as a continuing thing?
+
+Swizec Teller: How do I get better? I feel like I've gotten very lazy with that in recent years. But I try to explore different... at least different libraries, I try to find excuses to do a little bit of over-engineering at work sometimes when it when it's not strictly necessary. I'm not like embezzling -- or something like that -- my time. It's more like, Hey, we can solve this a little better than just slapdash. Get it done and out of the way, you spend an extra hour on it if you can, and you can learn something, you already use a better library or that kind of thing. A lot of what I do is my blogging and teaching is in large part, an excuse to learn myself. So I try to pick up a new, a new library, a new idea, a new topic, and build something with it, and then write about it because the writing part helps me distill what I learned. And I found that even if I for a while I did, like every day I would write 200 words about what I learned today. It turns out that in your day to day life, as a software engineer, you learn a lot that you don't realize, you learn, like, Oh, hey, I actually didn't know this before this morning. So yeah, there's a lot of that kind of stuff. I'm not good at it yet. But I'm kind of trying to stay away as much from blogs and random slapdash thing and focus more on books and courses, because I feel like it's a better use of my time. Because it's like, hey, this person spent the last 10 years researching this topic, we're going to have more to say on it in this curated piece of content than they would on a day to day basis when they were just writing about it as they were learning it. But you kind of need a... I think you need a bit of both. Read books for the distilled ideas. And then I find Twitter to be very useful for following the industry, seeing what my industry is doing. What is the bleeding edge right now? That's like, you often see people tweet about something and talk about something. And then three weeks later, it's at the top of Hacker News. And two months later, it's a new library that you can use in your tool belt.
+
+Noah Gibbs: Yeah. I'd also say something a lot like what you said about university. My experience is that books are good for learning about the forest and Twitter's often good for the trees. And you do need a certain amount of both.
+
+Swizec Teller: Yep, exactly. One thing. I think a lot of software engineers these days forget. But I think that's just human nature really, is they focus too much on tactics, and forget about the forest is the usual. Wow, that is such an amazing piece of code. How did you make that screenshot? Yeah. Or there's a lot of examples from the indie hacking community like, wow, you build a SaaS that makes $2,000 a month? How did you set up your LLC?
+
+Noah Gibbs: Yeah, yeah, people do tend to treat it like the tactics, the important part. I'm told by professional artists that the equivalent of that is... What kind of pen did you use?
+
+Swizec Teller: Yeah, exactly. Or like, what's your prettier configuration? How, how wide are your lines of code? Do you use the semicolons at the end of your line? Like, who gives a shit? It all gets compiled. It's all compiled away. I don't care what my code looks like. I care as much as much as I can, because I have to read it. But since prettier for JavaScript and other things, and like, it's so nice. You just write code, and it formats it for you. And I never think about code formatting ever again.
+
+Noah Gibbs: I know I'm terrible about this. Because anytime I'm watching anything on video, I spent all of my time trying to figure out how they made their animations.
+
+Swizec Teller: Yeah, exactly. And there's so much of that.
+
+Noah Gibbs: Well, some of some people make really good animations. You know, I wish I could do this.
+
+Swizec Teller: It's true. It's true. Yeah.
+
+Noah Gibbs: Cool. All right. So pretend that this podcast gets picked up by Hacker News and winds up at number one or something like that. It explodes. It goes everywhere. It's viral. Everybody...
+
+Swizec Teller: That would be amazing.
+
+Noah Gibbs: Swiz is the name on everybody's lips. So if this was a Twitter thread, you know, you'd put your SoundCloud. What's your SoundCloud? Where do you want people to go next?
+
+Swizec Teller: The best option is to go to [swizec.com](https://swizec.com), s-w-i-z-e-c.com. That's like my central presence on the internet. Or if you just search Swizec Teller on Google, I think the first two or three pages are about me. Nice. The benefit of using a consistent name everywhere.
+
+Noah Gibbs: Yeah, well, I was gonna say having an uncommon name helps a lot.
+
+Swizec Teller: Yes, it does.
+
+Noah Gibbs: I'm just lucky to be you know, Noah Gibbs and there aren't a lot of Noah Gibbses. It kind of sucks for the few other ones. But, but yeah, it's it's always nice when you've got something, something distinctive. Excellent. Before we go, you know a lot more about you than I know about you. Just, it's the nature of the deal. What should I have asked you what something valuable that I should have turned to you and said, "Swiz, tell me about this," that I've skipped completely. Because you know you better than I know you.
+
+Swizec Teller: One thing I've been thinking about a lot recently is one, are online courses the new drop shipping? Where it's just people with basically no skills, looking for a quick buck. I'm kind of afraid that's true. The other thing is that it feels like there's something rotten at the center of the online, online education space. And I think most of it is the whole tactics versus mindsets. It's very hard to find good materials online, where people are teaching you how to think about these problems, rather than... This is the "How To" solution to how you how to build with Express or how to X, how to Y. And I'm so tired of those How To tutorials. And yet at the same time, they are what gets the most hits on Google and what people search for the most. So that is something that's been vexing me, I'm trying to teach people mindsets when I teach software engineering and programming and JavaScript. I'm trying to focus on mindsets. And I'm worried that that is a losing proposition, because everyone is looking for How To tutorials.
+
+Noah Gibbs: There's definitely a lot of searching for those. But I mean, part of the problem is that everybody wants something easier than they can actually get Yes, I immediately think of you know, [30x500](https://30x500.com/academy/), or [Zero to Launch](https://growthlab.com/ztl/reviews/). But that's a great example of something where almost everybody wants it. The completion rates are incredibly low, are just really, really bad. I'm not suggesting those two are unusually bad. Those are both, were both unusually good. It's just that the the the average is so bad, that that's still that's still not amazing. And a lot of it is that, you know, if you look for what people say they want, and it's impossible, and you claim you can sell it, that is often where the money is. You know, if you if you sold water from the fountain of youth, and what it was was, you know, I don't know, quinine and soda water, you could probably sell a lot of those before they caught up with you.
+
+Swizec Teller: That's true. Yeah. And I don't like that about the online education space, which I think is where universities still excel. They're like, screw that. You're here to learn the mindsets and the knowledge, we're not going to teach you any of the tactics. And then you have a bunch of people on Twitter complaining, I just paid $50,000 for my education. And I don't know how to do anything. Yes. Because that's not the point.
+
+Noah Gibbs: Yeah. And that's well, and it's hard, because universities are often terrible about advertising that that's not the point, right? When you when you've got people who are thinking about going to college, one of the things the university doesn't want to say is "no, actually, we're not going to prepare you well for a job. You'll get out of here and you'll be hopeless at a job. You're gonna have to learn that separately."
+
+Swizec Teller: Yes. And they probably do that because they're smart.
+
+Noah Gibbs: Yeah.
+
+Swizec Teller: Imagine enrollment rates if University started saying this is not to get you a job.
+
+Noah Gibbs: Yeah, it's been observed. I went to a university that very much felt like a technical school. You know, like, Carnegie Mellon is very much about getting you a job.
+
+Swizec Teller: Nice.
+
+Noah Gibbs: Yeah. I mean, it's it's good, and it's bad. But it's overall it was good. It's done very, very well, by me. I can't actually complain. Yeah, it's not, it's not what most universities want to be. And I understand that. Cool. Excellent. Thank you very much. It's been fabulous to talk to you here. This is Swiz Teller, Swizec Teller. And this has been Computer Science: Just the Useful Bits. Thank you.
