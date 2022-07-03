@@ -1,8 +1,8 @@
 ---
 title: "Ross Kaffenberger: Teaching, WebPacker and Paradigms"
-anchor_fm_embed:
+anchor_fm_embed: With-Ross-Kaffenberger-Teaching--WebPacker-and-Paradigms-e1korlm
 episode_image: 
-quick_summary: ""
+quick_summary: "Ross Kaffenberger and I talk about teaching, software development and how he got into both. As always, I ask what was useful and not in his education."
 ---
 
 Oh man, my audio quality is AWFUL here. Luckily Ross's is better and he's great at carrying the conversation!
