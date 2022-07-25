@@ -21,7 +21,7 @@ Ross has done a lot with WebPacker -- WebPacker and the asset pipeline are a lot
 * [Traveling Salesman Problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem)
 * [Genetic Algorithms](https://en.wikipedia.org/wiki/Genetic_algorithm)
 * [Evolutionary Algorithms](https://en.wikipedia.org/wiki/Evolutionary_algorithm)
-* [Minimax algorithms]()https://en.wikipedia.org/wiki/Minimax
+* [Minimax algorithms]()[https://en.wikipedia.org/wiki/Minimax]
 * [Connect-Four](https://en.wikipedia.org/wiki/Connect_Four)
 * [Elixir language](https://elixir-lang.org/)
 * [Elixir Phoenix](https://www.phoenixframework.org/) - websocket-based web framework
