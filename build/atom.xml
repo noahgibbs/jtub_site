@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Codefol.io</title>
+  <subtitle>Ruby and Rails Stuff</subtitle>
+  <id>http://codefol.io/</id>
+  <link href="http://codefol.io/"/>
+  <link href="http://codefol.io/atom.xml" rel="self"/>
+  <updated>2022-08-08T00:00:00+00:00</updated>
+  <author>
+    <name>Noah Gibbs</name>
+  </author>
+  <entry>
+    <title>Larry Orton: Getting Started and Standing Out (with video)</title>
+    <link rel="alternate" href="http://codefol.io/jtub/larry-orton-getting-started-and-standing-out/"/>
+    <id>http://codefol.io/jtub/larry-orton-getting-started-and-standing-out/</id>
+    <published>2022-08-08T00:00:00+00:00</published>
+    <updated>2022-08-08T14:45:36+00:00</updated>
+    <author>
+      <name>Noah Gibbs</name>
+    </author>
+    <content type="html">&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/befHSuOxcGU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Larry has 15 years&amp;rsquo; experience in the military under his belt, and is still training as a software developer. We talk about the up-and-coming developer experience, before his first job and what they&amp;rsquo;re looking for. We also talk about social change, and how different the software world is from most of the real world. A little psychology, a little social science, a certain amount of ethics&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;A great conversation, all told.&lt;/p&gt;
+
+&lt;p&gt;Larry is also dyslexic, and we talk about how he handles that, and how it&amp;rsquo;s changed all those other things we talk about.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://twitter.com/SaltedCoder1"&gt;Larry&amp;rsquo;s Twitter: SaltedCoder1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.instagram.com/coastalcoder/"&gt;Larry&amp;rsquo;s Instagram: CoastalCoder&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://saltyscience.substack.com/"&gt;Larry&amp;rsquo;s Substack: SaltyScience&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Visual_Basic_for_Applications"&gt;Visual Basic for Applications (VBA)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Leslie_Lamport"&gt;Leslie Lamport, distributed systems pioneer and researcher&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://scratch.mit.edu"&gt;Scratch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=agOdP2Bmieg"&gt;Bret Victor, the Humane Representation of Thought&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www-cs-faculty.stanford.edu/~knuth/sn.html"&gt;Donald Knuth&amp;rsquo;s &amp;ldquo;Surreal Numbers&amp;rdquo;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://worrydream.com/LadderOfAbstraction/"&gt;Bret Victor, Up and Down the Ladder of Abstraction&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://processing.org/"&gt;Processing, a visual programming language&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Tick_(character)"&gt;The Tick by Ben Edlund&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://kk.org/thetechnium/amish-hackers-a/"&gt;On Amish Early Tech Adopters&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/IBM_and_the_Holocaust"&gt;IBM and the Holocaust (a book)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.lesswrong.com/tag/paperclip-maximizer"&gt;Paperclip Maximizer AIs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.decisionproblem.com/paperclips/"&gt;Universal Paperclips&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.usa.gov/military-pay"&gt;US Military Pensions&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.kitchensoap.com/2012/10/25/on-being-a-senior-engineer/"&gt;On Being a Senior Engineer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://twitter.com/GergelyOrosz"&gt;Gergely Orosz, The Pragmatic Engineer&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Collatz_conjecture"&gt;Collatz Conjecture&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img width="1125" height="2000" src="/img/tick_meme.jpg"&gt;&lt;/img&gt;&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Tobi Pfeiffer: So Many Languages</title>
+    <link rel="alternate" href="http://codefol.io/jtub/tobi-pfeiffer-so-many-languages/"/>
+    <id>http://codefol.io/jtub/tobi-pfeiffer-so-many-languages/</id>
+    <published>2022-08-01T00:00:00+00:00</published>
+    <updated>2022-07-25T13:25:36+00:00</updated>
+    <author>
+      <name>Noah Gibbs</name>
+    </author>
+    <content type="html">&lt;p&gt;Tobi works at Shopify and is the author of benchee, an Elixir-language benchmarking suite. He runs RUG:B, a Berlin-based Ruby group, maintains SimpleCov and&amp;hellip; Lots of stuff. I always feel tired looking at all the stuff Rubyists do :-)&lt;/p&gt;
+
+&lt;p&gt;Tobi had a pretty extensive formal computer science education, and it&amp;rsquo;s served him well. We also talk about a lot of different Ruby implementations, and various Ruby folks he&amp;rsquo;s met.&lt;/p&gt;
+
+&lt;p&gt;We also manage to cover a ridiculous variety of different languages and topics, and lots of older software history. He&amp;rsquo;s a very computer-history-literate fellow!&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://twitter.com/PragTob"&gt;Tobi&amp;rsquo;s Twitter: PragTob&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.pragtob.info/"&gt;Tobi&amp;rsquo;s web site&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/PragTob"&gt;Tobi&amp;rsquo;s GitHub&lt;/a&gt; - he&amp;rsquo;s done some interesting stuff!&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Hungarian_notation"&gt;Hungarian Notation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Delphi_(software)"&gt;Borland Delphi&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Turing_machine"&gt;Turing machine&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bwinf.de/"&gt;Bundeswettbewerbe Informatik&lt;/a&gt; - a German computer science competition&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.knowledgehut.com/tutorials/scrum-tutorial/scrum-of-scrums"&gt;Scrum of Scrums&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/datamapper"&gt;DataMapper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Extreme_programming"&gt;XP / Extreme Programming&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.oreilly.com/library/view/smalltalk-best-practice/9780132852098/"&gt;Smalltalk Best Practice Patterns&lt;/a&gt; - book&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://martinfowler.com/books/refactoring.html"&gt;Refactoring&lt;/a&gt; - book&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://pragprog.com/titles/jtrap/the-agile-samurai/"&gt;The Agile Samurai by Rasmussen&lt;/a&gt; - book&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Boolean_algebra"&gt;Boolean algebra&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Finite-state_machine"&gt;Finite State Machines&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://euruko.org/"&gt;EuRuKo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://rubycorns.club/about/"&gt;The Fabulous Rubycorns study group&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/juliusv"&gt;Julius Volz&lt;/a&gt; - an author of Prometheus&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Buffer_overflow"&gt;Buffer Overflow&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Address_space_layout_randomization"&gt;Address Space Layout Randomization&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/NOP_slide"&gt;NOP Slide attack&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.metasploit.com/"&gt;Metasploit&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/google/AFL"&gt;AFL&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Fuzzing"&gt;Fuzzing, or Fuzz Testing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://maglev.github.io/"&gt;MagLev Ruby&lt;/a&gt; - Ruby implementation based on the Smalltalk VM&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/topazproject/topaz"&gt;Topaz Ruby&lt;/a&gt; - Ruby implementation based on the PyPy VM toolchain&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/simplecov-ruby/simplecov"&gt;SimpleCov&lt;/a&gt; - a Ruby coverage tool that Tobi maintains&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://rubytogether.org/"&gt;RubyTogether&lt;/a&gt; - a charitable Ruby foundation&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.skotos.net/"&gt;SkotOS.net&lt;/a&gt; - a commercial MUD company, now defunct&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Dworkin%27s_Game_Driver"&gt;Dworkin&amp;rsquo;s Generic Driver&lt;/a&gt; - the interpreter for the DGD language for MUDs, ancient multiplayer text games&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://elixir-lang.org/"&gt;Elixir language&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://crystal-lang.org/"&gt;Crystal language&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Mirah_(programming_language)"&gt;Mirah language&lt;/a&gt; - formerly Duby, now defunct&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Why_the_lucky_stiff"&gt;_why the lucky stiff&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.ruby-camping.com/"&gt;Camping&lt;/a&gt; - Ruby HTTP microframework by _why the Lucky Stiff&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://shoesrb.com/"&gt;Shoes GUI framework&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/hacketyhack"&gt;Hackety Hack&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/The_Art_of_the_Metaobject_Protocol"&gt;The Art of the Metaobject Protocol&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://patshaughnessy.net/ruby-under-a-microscope"&gt;Ruby Under a Microscope by Shaughnessy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Tagged_pointer"&gt;Tagged Pointers&lt;/a&gt; - how you attach &amp;ldquo;extra&amp;rdquo; bits of information inside a pointer&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://screeps.com/"&gt;Screeps&lt;/a&gt; - scripted game for programmers&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Vala_(programming_language)"&gt;Vala language&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Alan_Kay"&gt;Alan Kay&lt;/a&gt; - inventor of Smalltalk and Object Oriented Programming&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/PARC_(company)"&gt;Xerox PARC&lt;/a&gt; - an older innovation centre that came up with the mouse, the modern GUI and far more&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://worrydream.com/"&gt;Bret Victor&lt;/a&gt; - an amazing visionary in learning, interfaces and media for thinking&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Ross Kaffenberger: Teaching, WebPacker and Paradigms</title>
+    <link rel="alternate" href="http://codefol.io/jtub/ross-kaffenberger-teaching-webpacker-and-paradigms/"/>
+    <id>http://codefol.io/jtub/ross-kaffenberger-teaching-webpacker-and-paradigms/</id>
+    <published>2022-07-25T00:00:00+00:00</published>
+    <updated>2022-07-25T13:25:36+00:00</updated>
+    <author>
+      <name>Noah Gibbs</name>
+    </author>
+    <content type="html">&lt;p&gt;Oh man, my audio quality is AWFUL here. Luckily Ross&amp;rsquo;s is better and he&amp;rsquo;s great at carrying the conversation!&lt;/p&gt;
+
+&lt;p&gt;We talk about how Ross &amp;ldquo;cheats&amp;rdquo; both to get into teaching and to get into tech, and about some overlap between the two &amp;ndash; we talk about Seymour Papert, of course. Later we get into different paradigms of programming and what you learn from them, as well as the balance between being a generalist and a specialist.&lt;/p&gt;
+
+&lt;p&gt;Ross has done a lot with WebPacker &amp;ndash; WebPacker and the asset pipeline are a lot like Bundler as a way to control the Wild West of dependency management.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://twitter.com/rossta"&gt;Ross&amp;rsquo;s Twitter: rossta&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://rossta.net"&gt;Ross&amp;rsquo;s web site&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Yann_LeCun"&gt;Yann LeCun&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.teachforamerica.org/"&gt;Teach for America&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Mindstorms_(book)"&gt;MindStorms, by Seymour Papert&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Rube_Goldberg_machine"&gt;Rube Goldberg machines&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Topological_sorting"&gt;Topological Sort / TSort&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Travelling_salesman_problem"&gt;Traveling Salesman Problem&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Genetic_algorithm"&gt;Genetic Algorithms&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Evolutionary_algorithm"&gt;Evolutionary Algorithms&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#"&gt;Minimax algorithms&lt;/a&gt;[https://en.wikipedia.org/wiki/Minimax]&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/Connect_Four"&gt;Connect-Four&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://elixir-lang.org/"&gt;Elixir language&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.phoenixframework.org/"&gt;Elixir Phoenix&lt;/a&gt; - websocket-based web framework&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://rebuilding-rails.com"&gt;Rebuilding Rails&lt;/a&gt; - my book&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://clojure.org/"&gt;Clojure&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.gnu.org/software/emacs/"&gt;Emacs&lt;/a&gt; - an example of weirdness, but also a text editor&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://scratch.mit.edu"&gt;Scratch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://tomorrowcorporation.com/humanresourcemachine"&gt;Human Resource Machine&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://2dboy.com/"&gt;World of Goo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://tomorrowcorporation.com/7billionhumans"&gt;7 Billion Humans&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://a16z.com/2011/08/20/why-software-is-eating-the-world/"&gt;&amp;ldquo;Software is Eating the World&amp;rdquo;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://quotegeek.com/quotes-from-movies/jurassic-park/397/"&gt;&amp;ldquo;Your scientists were so preoccupied with&amp;hellip;&amp;rdquo; Jeff Goldblum quote&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Craig Petterson: Buzzwords, Pina Coladas and Centaur Chess</title>
+    <link rel="alternate" href="http://codefol.io/jtub/craig-petterson-buzzwords-pina-coladas-and-centaur-chess/"/>
+    <id>http://codefol.io/jtub/craig-petterson-buzzwords-pina-coladas-and-centaur-chess/</id>
+    <published>2022-07-18T00:00:00+00:00</published>
+    <updated>2022-07-04T21:31:41+00:00</updated>
+    <author>
+      <name>Noah Gibbs</name>
+    </author>
+    <content type="html">&lt;p&gt;We talk about how Craig got started, of course, and about buzzwords and how he did his early job hunting. We talk a &lt;em&gt;lot&lt;/em&gt; about Ruby performance - who&amp;rsquo;s who, what matters, what&amp;rsquo;s annoying.&lt;/p&gt;
+
+&lt;p&gt;We veer a bit into how Pina Coladas shouldn&amp;rsquo;t use dark rum (heresy!) and about the example of Centaur Chess, and how it related to other human/computer interactions.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://twitter.com/jalisocsp"&gt;Craig&amp;rsquo;s Twitter: JalisoCSP&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://craigpetterson.co.uk"&gt;Craig&amp;rsquo;s Web Site&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://www.nateberkopec.com/"&gt;Nate Berkopec&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://schneems.com/about"&gt;Richard Schneeman&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://samsaffron.com/"&gt;Sam Saffron&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://github.com/noahgibbs/rails_ruby_bench"&gt;Rails Ruby Bench&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Google_Glass"&gt;Google Glass&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://github.com/opal/opal"&gt;Opal&lt;/a&gt; - Ruby to JS translator&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="http://www.rubymotion.com/"&gt;RubyMotion&lt;/a&gt; - Ruby for mobile apps&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://www.vim.org/"&gt;Vim&lt;/a&gt; - text editor&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/KISS_principle"&gt;KISS principle&lt;/a&gt; - &amp;ldquo;Keep It Simple, Stupid&amp;rdquo;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Moore%27s_law"&gt;Moore&amp;rsquo;s Law&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Green_threads"&gt;Green Threads&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://puma.io/"&gt;Puma&lt;/a&gt; - Ruby app server&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://tomorrowcorporation.com/humanresourcemachine"&gt;Human Resource Machine&lt;/a&gt; / &lt;a href="https://tomorrowcorporation.com/7billionhumans"&gt;7 Billion Humans&lt;/a&gt; - games that help you learn assembly language&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://www.team17.com/games/overcooked/"&gt;Overcooked&lt;/a&gt; - cooking game&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Advanced_chess"&gt;Centaur Chess&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://honeycomb.io"&gt;Honeycomb.io&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=QsZSuK6GczA"&gt;Spectral Repair&lt;/a&gt; for audio engineering (video)&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://www.vice.com/en/article/ae9eqz/music-2000-was-the-greatest-and-only-way-to-produce-jungle-on-your-playstation"&gt;Music2000 game&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Akien McIain: Test Automation Engineering</title>
+    <link rel="alternate" href="http://codefol.io/jtub/akien-mciain-test-automation-engineering/"/>
+    <id>http://codefol.io/jtub/akien-mciain-test-automation-engineering/</id>
+    <published>2022-07-11T00:00:00+00:00</published>
+    <updated>2022-07-04T21:31:41+00:00</updated>
+    <author>
+      <name>Noah Gibbs</name>
+    </author>
+    <content type="html">&lt;p&gt;This episode is with me, my wife Krissy and Akien McIain, a mutual friend who is also a very senior test automation engineer. When two old engineers get together to talk, you can always expect a lot of war stories&amp;hellip; But more importantly, a lot of this is a compare/contrast between developers, QA and test automation. What&amp;rsquo;s similar? What&amp;rsquo;s different? How do the two groups related to each other on the job?&lt;/p&gt;
+
+&lt;p&gt;And when you get outside &amp;lsquo;normal&amp;rsquo; software dev jobs, the career path is less clear. How do you prepare for something when there&amp;rsquo;s not a degree program? What does the path through that career look like? We talk a lot about how to make the right kind of mistakes to keep moving forward. And that&amp;rsquo;s useful for anybody.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://testautomationarchitecture.blogspot.com/"&gt;Akien&amp;rsquo;s Blog: Test Automation Architecture&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.microfocus.com/en-us/products/silk-test/overview"&gt;SilkTest&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://scratch.mit.edu"&gt;Scratch&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://martinfowler.com/"&gt;Martin Fowler&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://devqa.io/sdet-hiring-software-developers-in-test/"&gt;SDET - Software Development Engineer in Test&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Andrew Owen: The Culture of Programming - If You're Raised by Missionaries</title>
+    <link rel="alternate" href="http://codefol.io/jtub/andrew-owen-the-culture-of-programming-if-youre-raised-by-missionaries/"/>
+    <id>http://codefol.io/jtub/andrew-owen-the-culture-of-programming-if-youre-raised-by-missionaries/</id>
+    <published>2022-07-04T00:00:00+00:00</published>
+    <updated>2022-07-04T21:31:41+00:00</updated>
+    <author>
+      <name>Noah Gibbs</name>
+    </author>
+    <content type="html">&lt;p&gt;I barely know how to summarise this one. It&amp;rsquo;s one of my favourites. Andrew is from dot-NET rather than Ruby. He was raised by missionaries, and is thus extremely literate about cultures and how to introduce yourself into a new one. He sees a lot of what I see from a very enlightened outsider&amp;rsquo;s perspective. Which is like catnip to me, just so we&amp;rsquo;re clear.&lt;/p&gt;
+
+&lt;p&gt;We talk about how often learning programming &lt;em&gt;skill&lt;/em&gt; is a side effect of learning programming &lt;em&gt;culture&lt;/em&gt;. Also about affordances - what particular languages, cultures and tools encourage, not just what they enable. Powerful stuff.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://twitter.com/yumaikas"&gt;Andrew&amp;rsquo;s Twitter: yumaikas&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://junglecoder.com"&gt;Andrew&amp;rsquo;s Web Site: junglecoder.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Correction from Andrew:&lt;/p&gt;
+
+&lt;p&gt;&amp;ldquo;So, I did a bit of looking, and the code generator guy wasn&amp;rsquo;t djb, it was Peter Hintjens, who worked with a program called GSL (Generator Script Langauge). He&amp;rsquo;s most famous for working on zeromq.&lt;/p&gt;
+
+&lt;p&gt;That, to me, would probably be how I&amp;rsquo;d use Ruby, to try to combine expressiveness and performance. Though, I don&amp;rsquo;t know for sure. https://github.com/imatix/gsl is the repo for it.&lt;/p&gt;
+
+&lt;p&gt;I wish I&amp;rsquo;d remembered it properly on the show.&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;We all have trouble remembering trivia when we&amp;rsquo;re put on the spot! At least, I certainly do.&lt;/p&gt;
+</content>
+  </entry>
+</feed>

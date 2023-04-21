@@ -1,0 +1,450 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Noah Gibbs">
+    <!-- Use the title from a page's frontmatter if it has one -->
+    <title>Jason Swett: When Data Structures, Big-O Notation and Algorithms Were Completely Useless</title>
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet" />
+    <link href="/stylesheets/site.css" rel="stylesheet" />
+    <script src="/javascripts/site.js"></script>
+  </head>
+  <body>
+    
+    <script src="/javascripts/jquery.min.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+  </body>
+</html>
+
+<div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+  <div class="container">
+    <a href="#" class="navbar-brand">Computer Science: Just the Useful Bits</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://anchor.fm/just-the-useful-bits/">On Anchor.fm</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://open.spotify.com/show/1QGYnZWXmV7xqUolRuCm3I">On Spotify</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://anchor.fm/s/11c2aba8/podcast/rss">RSS</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="page-header" id="banner">
+    <div class="row">
+      <!--<div class="col-lg-8 col-md-7 col-sm-6"> -->
+      <div class="col-10">
+          <!-- Blog page layout -->
+  <div class="blog-page card border-light">
+    <div class="card-header">
+        <img src="/img/001-280x300.jpg" alt="Portrait of the interviewee" class="page-portrait" />
+      <h3 class="card-title">Jason Swett: When Data Structures, Big-O Notation and Algorithms Were Completely Useless</h3>
+        <span class="card-body text-muted">Aug 24 2020</span>
+
+    </div>
+    <div class="card-body">
+            <iframe src="https://anchor.fm/just-the-useful-bits/embed/episodes/With-Jason-Swett-when-data-structures--big-O-notation-and-algorithms-were-completely-useless-eiaktt" height="102px" width="400px" frameborder="0" scrolling="no"></iframe>
+            <br/><a href="https://anchor.fm/just-the-useful-bits/episodes/With-Jason-Swett-when-data-structures--big-O-notation-and-algorithms-were-completely-useless-eiaktt">(Anchor.fm link)</a>
+            <p class="quick-summary-area">
+              Jason Swett and I talk about his education as a programmer and the classes he took in university. I also explain big-O notation in a simple way that (Jason thinks) is useful, and we wander onto topics like philosophy, as Jason and I tend to&hellip;
+            </p>
+
+      <h2>Links We Mention</h2>
+
+<ul>
+<li>The <a href="https://www.codewithjason.com/rails-with-jason-podcast/">Rails with Jason Podcast</a></li>
+<li><a href="https://www.goodreads.com/quotes/384067-if-you-want-to-build-a-ship-don-t-drum-up">A quote by Saint-Exupery</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Bitwise_operation">Bitwise operations</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Pointer_(computer_programming)">Pointers</a></li>
+<li><a href="https://www.investopedia.com/terms/b/btoc.asp">B2C or Business-to-Consumer</a></li>
+<li><a href="https://railswithjason.simplecast.fm/noah-gibbs-3">Rails with Jason, &ldquo;When Not to Use Rails&rdquo;</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Big_O_notation">Big O Notation</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Sorting_algorithm">Sorting Algorithm</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Parabola">Parabola/parabolic</a></li>
+<li><a href="http://www.paulgraham.com/taste.html">Paul Graham&rsquo;s essay &ldquo;Taste for Makers&rdquo;</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Erma_Bombeck">Erma Bombeck</a></li>
+<li><a href="https://www.amazon.co.uk/Grass-Always-Greener-Over-Septic/dp/0345471725">The Grass is Always Greener Over the Septic Tank</a></li>
+<li><a href="https://www.destroyallsoftware.com/screencasts">Destroy All Software</a></li>
+<li><a href="https://twitter.com/garybernhardt">Gary Bernhardt&rsquo;s Twitter</a></li>
+<li><a href="https://www.destroyallsoftware.com/talks/wat">Gary Bernhardt&rsquo;s &ldquo;Wat&rdquo; Talk on Javascript</a></li>
+<li><a href="https://lettersofnote.com/2012/03/28/the-skills-of-leonardo-da-vinci/">Leonardo da Vinci&rsquo;s letter to a prospective patron</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Hedonic_treadmill">The Hedonic Treadmill</a></li>
+<li><a href="https://www.mentalfloss.com/article/24149/how-scurvy-was-cured-then-cure-was-lost">How the Cure for Scurvy was Found and Lost</a></li>
+</ul>
+
+<h2>Transcript</h2>
+
+<p>Noah Gibbs: I&rsquo;m Noah Gibbs and this is Computer Science: Just the Useful Bits. I&rsquo;m here with Jason Swett, who runs his own excellent podcast. I&rsquo;ve been there a couple of times. Jason, you&rsquo;ve already told me a little bit about your your computer science education about how you came by that education. I don&rsquo;t just mean university education. I mean, all the ways you&rsquo;ve learned. But yeah, can you can you tell our listeners a little about that?</p>
+
+<p>Jason Swett: Sure. I started doing computer stuff as it pertains to programming at least around 1996. When I put my first website online, I was like 12, it was just HTML. So uploaded via FTP with a 14.4k modem probably. So that was the first thing that I did. My dad happens to be a programmer also. So that&rsquo;s kind of my entry point into programming. And then I worked for my dad a little bit when I was like a teenager, then I went to college, on and off for about five years. I did major in computer science. Actually, I started in computer information systems, because I got some bad advice. And they told me that if you want to be a programmer, you major in computer information systems. And if you want to be a computer engineer, you majored in computer science, which I don&rsquo;t know who told me that, but they&rsquo;d like helped me waste a good portion of a year. Anyway. I did that on and off for five years. And then I got a job. And so I just quit going to school after I got a job. My programming job that is, yeah, it&rsquo;s not a bad way to learn.</p>
+
+<p>Noah Gibbs: So part of what we were talking about before any of this was basic data structures. And we talked a little about linked lists. I believe you mentioned that you didn&rsquo;t didn&rsquo;t use linked lists for a lot and somebody was talking about, &ldquo;who uses linked lists for anything?&rdquo; And I was smiling about that, because I&rsquo;m an old time C programmer. I mean, when you say you were doing HTML when you were 12, I wasn&rsquo;t doing HTML when I was 12, there was no such thing.</p>
+
+<p>So I was used to the idea that linked lists are one of those standard things that of course, you use them because in C, if you want to have a variable number of anything, you don&rsquo;t have very many choices other than linked lists. You can have a fixed number of things without linked lists. But if you want a variable number of things like you don&rsquo;t you don&rsquo;t have many choices other than linked lists. And so it was an absolutely standard skill. And awesome that it&rsquo;s not any more. Awesome.</p>
+
+<p>But yeah, so you you talked a little bit about basic data structures, and things you&rsquo;ve done there. Did you find any of the stuff you learned about that, in school or elsewhere, useful on the job?</p>
+
+<p>Jason Swett: I wish I could say that I did. But I&rsquo;m not just saying this like to be cynical. But literally nothing that I can think of that I learned in all the time I was in school, have I found applicable in my work.</p>
+
+<p>Noah Gibbs: Okay. Would you say that the valuable stuff was mostly debugging and teaching yourself skills on the job? Where did valuable stuff come from?</p>
+
+<p>Jason Swett: Teaching myself. Even though my dad was a programmer, he never that I can recall really taught me anything about programming. So it was all stuff that I learned on my own. So experience and reading books and reading things online. It was all self educated. And then, of course, people I worked with over the years, I learned stuff from them, too. So a combination of that, and teaching myself.</p>
+
+<p>Noah Gibbs: Makes a lot of sense to me. Where I grew up, there wasn&rsquo;t really anybody around me that knew. So kind of familiar. I mean, you had a dad, who was a programmer, and I didn&rsquo;t, but it kind of sounds like our education was was similar that way.</p>
+
+<p>Jason Swett: Yeah, yeah. It&rsquo;s like the most important skill you can learn as a programmer is the skill of teaching yourself and just not giving up when you hit a wall because you&rsquo;re gonna hit all kinds of walls. There&rsquo;s going to be nobody who can help you. And you just have to figure out how to get yourself unstuck.</p>
+
+<p>Noah Gibbs: That makes a lot of sense. So do you remember much of what they taught you in class?</p>
+
+<p>Jason Swett: Well, we&rsquo;re talking about linked lists. And by the way, dear listener, the chat Noah was referring to is me and Noah had a text chat online to prep for the show. So you didn&rsquo;t miss some of the episode, if you&rsquo;re wondering about that. But yeah, you and I had talked about, like, linked lists when we were chatting, and I did learn some of that in school. It was interesting for me to learn from you that that is something people actually use in production. Like, for example, if you&rsquo;re a C programmer, and I mentioned to you that I wish they just told us that, hey, if you&rsquo;re gonna go do C programming, you&rsquo;ll probably use this a whole bunch. If you&rsquo;re gonna do like PHP or Ruby or something like that. You&rsquo;ll never ever use this and I would have said, oh, okay, fine. I&rsquo;ll never use this. But this is a useful thing that people will use. As it was, I had no idea what this was. This was like learning Latin or something just for for an academic exercise, you know. So that was that was one thing we learned.</p>
+
+<p>Oh, we did a lot of algorithms stuff. And I was terrible at the algorithm stuff like sorting lists of things, binary search, big O notation. I never understood that stuff. Also, I was a terrible lazy student. And I did a lot of partying and drinking and stuff in college. And so my focus was not always on the academic stuff. So it was not entirely their fault. I shouldn&rsquo;t even say it like that. The reason I did so badly was mostly because of me, not mostly because of them, but also the stuff that they taught. I was just not relevant to to my interests or the work that I ended up doing later. And let me think, linked list algorithm stuff. That&rsquo;s honestly about all that I remember there was a bunch of details inside of that. But the the big picture things, it seemed to just be a bunch of algorithms and stuff.</p>
+
+<p>Noah Gibbs: So, my education was a long time back and there a few things that are different from from modern computer science. I&rsquo;m really curious, did they go over hash tables significantly with you or dictionaries, or any of the equivalent names for the same thing?</p>
+
+<p>Jason Swett: If they did, I don&rsquo;t remember at all.</p>
+
+<p>Noah Gibbs: Okay. Hash tables was one that eventually I got pretty deep into, but again, that&rsquo;s because it was in C. And in C, you don&rsquo;t have a standard hash table facility, you mostly roll your own. You have to be able to roll your own. Hash tables are really useful. But yeah, it&rsquo;s a it&rsquo;s a sort of a whole other world these days than it was then.</p>
+
+<p>Jason Swett: Yeah, yeah, we started with C++. Almost everything that I did for the first little while was C++. And then I had this bad year where I failed all my classes. And then I came back. And they had switched from C++ to C#. And it was it was awful because now we were using Windows for everything instead of Linux. And I just found that appalling. But it was way easier. C# was so much easier to deal with than C++. I felt like I was being baby, which was another part of the reason I didn&rsquo;t like to switch to Windows. But there&rsquo;s this one particular class that everybody had a really hard time with. It was one of those classes where like, half the people in the class fail and change their major and that kind of thing. My recollection is I failed that class, at least once. I might have failed that twice when it was C++. And then when I switched it to C# I passed it so easily because it was like a different class at that point.</p>
+
+<p>Noah Gibbs: That makes a lot of sense. Yeah, we had our weed-out classes too. I mean, a few people would would fail them repeatedly at where I went to was a lot more common to fail it and then be told that you were picking a new major now. But Carnegie Mellon was was big on that, like their their fine arts department would literally have depending on which Fine Arts major you were in was a different year. It might be freshmen, if you were unfortunate enough to be an actor. Or junior, if you were if you were in art, they would sit you down with a whole table full of people who would tell you if you got to continue or if you got to pick a new major now.</p>
+
+<p>Jason Swett: Oh, wow.</p>
+
+<p>Noah Gibbs: Yeah. So yeah, it sort of felt similar. Carnegie Mellon makes me happy because they don&rsquo;t know how to teach stuff well, necessarily, but they do know how to tell if you can do it well. And it turns out the same approach works great for practical programming and architecture and art and acting. You just get a bunch of people who can judge it and if the student is not good at it, you throw them out.</p>
+
+<p>Jason Swett: Yeah, there&rsquo;s something good about that harshness, to not like just let everybody in to try to be nice or something like that. Because in my teaching experiences when you have when you have a real mixture of abilities in the class, it really hinders the experience of the people who have the higher comfort level. And if they have that kind of cold attitude where they say, you know what, screw you guys, you you aren&rsquo;t going to be good at this. So just have a nice life. See you later, we&rsquo;re just going to keep the people with the aptitude, then it can be so much better for those people who stay. Now there&rsquo;s an argument to be made that it&rsquo;s not good to do it like that. But I think the benefits of doing it like that if you do decide to do it like that are pretty inarguable.</p>
+
+<p>Noah Gibbs: Yeah, well, it&rsquo;s a little like lottery tickets. Right? It sucks for the people who don&rsquo;t win, but it&rsquo;s really good if you&rsquo;re the one who wins. Yeah, I mean, not not that the graduation rate is as low as lottery tickets, but you know what I mean?</p>
+
+<p>Jason Swett: Yeah.</p>
+
+<p>Noah Gibbs: Okay. You talked about big O notation, and it kind of sounds like you found no use for that in your practical and professional life. Is that a fair summary?</p>
+
+<p>Jason Swett: Oh, yeah, that&rsquo;s an understatement. I still have no idea what it even is.</p>
+
+<p>Noah Gibbs: You know, I really want to write a blog post, I&rsquo;m going to make this happen. I&rsquo;m going to write a decent blog post about big O notation, just because there is a hidden useful center to it. And classes are incredibly bad at explaining it.</p>
+
+<p>Jason Swett: I don&rsquo;t know.</p>
+
+<p>Noah Gibbs: Yeah, you want the quick version, though?</p>
+
+<p>Jason Swett: That would be great. And the quick comment before that, like, please, one of the things that that they did a they did less than a great job of along with the linked list thing is like, they never explained why I might be interested in knowing it. There&rsquo;s that sailor saying that like, if you want to get people I&rsquo;m paraphrasing badly here but like, <a href="https://www.goodreads.com/quotes/384067-if-you-want-to-build-a-ship-don-t-drum-up">if you want to get some people together and have them build a ship for you don&rsquo;t talk about the lumber and stuff like that. Teach them to dream of the Endless Sea</a>. The actual quote is much more eloquent than that, but that&rsquo;s the idea. Don&rsquo;t start with &ldquo;here&rsquo;s what big O notation is.&rdquo; Tell me hey, if you know this, then you can do this amazing thing. And then I&rsquo;ll be motivated to know the boring thing in service of that more fun thing.</p>
+
+<p>Noah Gibbs: Yeah. Well, I feel like professors, as a rule are pretty bad about thinking of themselves as preparing you for a professional career. I mean, when I talk about myself, I tend to say: you&rsquo;ve probably at some point had to replace a roof. And if you haven&rsquo;t, you&rsquo;ve probably been nearby when somebody else did. It&rsquo;s hard. But if you replace a roof the right way, one of the things that happens is you you go down the list of people in your in your town, and you call until you found an old guy who&rsquo;s been replacing roofs for about 30 years, and he takes roofs way too seriously. And if you ask him to do it on the cheap, he&rsquo;ll sigh deeply and tell you that yeah, he can absolutely do that. But if it was his roof, he knows how he would do it. I&rsquo;m that but for software and it turns out that that&rsquo;s not what professors aspire to be. Not even a little like it. As a rule, the reason you become a professor is that you want to be part of a grand and universal truth. Like if you look at mathematics or physics or advancing the scope of human knowledge. One of the things that generally isn&rsquo;t is the practical day to day, minute to minute, because the problem is the practical day to day minute to minute it changes, you know, between now and 100 years from now. Carnegie Mellon, where I went to school didn&rsquo;t used to have a computer science degree, because they felt a computer was a tool. And just like you don&rsquo;t have a degree in shovel use, you don&rsquo;t have a degree in computer use. It&rsquo;s a tool, it&rsquo;s going to be different in a few years. Why would you do that? Yeah, it makes sense.</p>
+
+<p>Jason Swett: That does make a certain amount of sense. And I wish so badly that I had understood that at the beginning. And by &ldquo;that&rdquo; I mean the attitude of the professors in the university in general that their role that they perceive themselves in is not to prepare you for a career. But it&rsquo;s something else. It&rsquo;s more to give you knowledge and help you think and stuff like that, which is a fine mission. That&rsquo;s fine. I just wish I would have understood that because if you go to college thinking you&rsquo;re going to a vocational school, but what you actually get is something very academic that has very little vocational application, then that&rsquo;s going to be a pretty disappointing experience. But if I had known from the very beginning, hey, this is not a vocational school. This is something else. Here&rsquo;s the something else that it is I would have said, okay, well, that&rsquo;s maybe not exactly what I was after. But that&rsquo;s still pretty good. So I&rsquo;ll do it. And I would have taken everything with such a different attitude, and probably maybe done a little better or&hellip; Though I was a young dumb 19 to 22 year old at the time, so some other things would have had to change also, but that would have helped.</p>
+
+<p>Noah Gibbs: Yeah. Well, you know, it&rsquo;s not really that I had a better attitude overall, I remember it all really well. And I would say the big difference is that I left Texas really, really hoping to never go back. And the thing about failing is they&rsquo;d have shipped me back to Texas.</p>
+
+<p>Jason Swett: Wait, tell me about that.</p>
+
+<p>Noah Gibbs: Well, I grew up in Texas. I don&rsquo;t recommend it. I grew up in the town that has the State Penitentiary. I don&rsquo;t recommend that either.</p>
+
+<p>Jason Swett: What part of Texas are you from?</p>
+
+<p>Noah Gibbs: Huntsville is the name of the town. You&rsquo;ve almost certainly never heard of it. Unless you&rsquo;re a blues singer and I don&rsquo;t know about it. No, I&rsquo;m not kidding. Weirdly. No, if you take the great big highway between Houston and Dallas, and you stop slightly closer to Houston than Dallas, you&rsquo;ll be stopping right past a giant statue of Sam Houston. If you go by at night, you&rsquo;ll discover it&rsquo;s underlit like he&rsquo;s telling scary stories by the campfire. And ther will be little signs by the road that tell you to absolutely under no conditions pick up hitchhikers. And that&rsquo;s because you&rsquo;ll be going past several prison units. And it turns out that if you pick up hitchhikers, there&rsquo;s chance you&rsquo;re picking up escaped prisoners and they&rsquo;d rather you didn&rsquo;t. You would probably also rather you didn&rsquo;t.</p>
+
+<p>Jason Swett: Yeah.</p>
+
+<p>Noah Gibbs: So that&rsquo;s where I went to high school. If you&rsquo;ve ever wondered, what&rsquo;s it like to go to high school in a place where a third of the town works for the State Penitentiary? The answer is that the charming parts are the kind of charming parts you&rsquo;re thinking of, if you&rsquo;re mentally directing a movie. Like the principal of my high school was named Anne Froehlik and they had big fun paper letters and stuff like you have at every school and it said &ldquo;Welcome to the Froehlik Unit.&rdquo; The other units in the prison were the Walls Unit and the Ellis Unit and things like that. And &ldquo;Welcome to the Froehlik Unit.&rdquo; They had a -</p>
+
+<p>Jason Swett: so everybody, everybody was very aware that it was a prison oriented town,</p>
+
+<p>Noah Gibbs: it was hard to miss.</p>
+
+<p>Jason Swett: Wow. Yeah. So I I lived in Texas for two years myself. I lived in Austin, and I know they have the saying, &ldquo;Austin&rsquo;s not Texas, but Austin is surrounded by Texas.&rdquo;&ldquo; So I at least get a taste of Texas. And you know, it really actually is in reality located in Texas. So it&rsquo;s still Texas.</p>
+
+<p>Noah Gibb: Yeah, it&rsquo;s still a little different. I mean, you&rsquo;re not wrong, but it&rsquo;s it&rsquo;s like a city and that&rsquo;s not in Texas except it&rsquo;s surrounded by Texas.</p>
+
+<p>Jason Swett: Yeah, it&rsquo;s a blue dot in red state.</p>
+
+<p>Noah Gibbs: Yeah, it&rsquo;s within driving distance of Texas.</p>
+
+<p>Jason Swett: Yeah. I went to Dallas a couple times. And every time I went to Dallas, I&rsquo;m like, I&rsquo;m getting back to Austin as soon as possible.</p>
+
+<p>Noah Gibbs: That makes a lot of sense to me. You know, Dallas was one of the big cities that was that was a cosmopolitan Oasis compared to all that stuff in the middle.</p>
+
+<p>Jason Swett: Yeah. All that stuff in the middle. And somebody who also grew up&hellip; I don&rsquo;t know if you said it was a small town but Im inferring that. As somebody who also grew up in a small town I can imagine.</p>
+
+<p>Noah Gibbs: Yeah, well, the number was fairly high. I mean, tens of thousands of people. But one of the things worth mentioning here is that prisoners count on the census.</p>
+
+<p>Jason Swett: Okay? So some meaningful percentage of the town&rsquo;s population was in prison.</p>
+
+<p>Noah Gibbs: And again, a third of the the non prisoners in the town worked for the prison. So even those who weren&rsquo;t necessarily sentenced to prison, were still frequently in prison.</p>
+
+<p>Jason Swett: Interesting. Um, how did we get here?</p>
+
+<p>Noah Gibbs: Oh, talking about how I concentrated a lot at university because otherwise they shipped me back to Texas.</p>
+
+<p>Jason Swett: Oh, yeah. And where did you go? Oh, yeah, Carnegie Mellon, which is like Pittsburgh.</p>
+
+<p>Noah Gibbs: Yeah. Yeah, Pittsburgh.</p>
+
+<p>Jason Swett: Yeah. Cuz Andrew Carnegie was the the steel guy and he and Pittsburgh is the steel town. Yep.</p>
+
+<p>Noah Gibbs: By the time I got there, it was kind of a rotting ex-steel town. I assume it still is. I&rsquo;m not sure why that would have changed.</p>
+
+<p>Jason Swett: Oh, got it. I&rsquo;ve heard his back on the upswing recently.</p>
+
+<p>Noah Gibbs: I&rsquo;ve heard good things about living there. I haven&rsquo;t heard as much in the way of good things about the steel industry, but I might have missed it.</p>
+
+<p>Jason Swett: Yeah, who knows? I guess to summarize what&rsquo;s been said so far, there was very little that I learned in my computer science classes that I found to be applicable for later. And I don&rsquo;t know that if somebody&rsquo;s listening to this who&rsquo;s majoring in CS, they might find that disheartening. With somebody who&rsquo;s listening to this, who doesn&rsquo;t have a CS degree, and they want to get into programming that might be very encouraging, because it shows that you, you don&rsquo;t need a CS degree and you don&rsquo;t need a CS education in order to be a successful programmer.</p>
+
+<p>Noah Gibbs: I personally think the rise of boot camps are one of the most encouraging signs in our industry in a very long time. I mean, we&rsquo;re still figuring out how they work, but I think the basic idea is really good. You just have to do quality control on them.</p>
+
+<p>Jason Swett: Yeah. Yeah, cuz the variance in quality is very high. And the variance in the the quality of the people who come out there come out of there is very high, because you could probably hire somebody out of boot camp and it&rsquo;s a complete disaster. Or you could hire somebody out of a boot camp and they turn out to be great. Like you said, it&rsquo;s it&rsquo;s early on, and we just have to figure out how to do boot camps. Well, but I completely agree that they&rsquo;re a great thing.</p>
+
+<p>Noah Gibbs: Yeah. Well, and the difference in quality, that&rsquo;s a difference of degree not of kind from the way universities worked, right? I mean, not only are there universities who turn out almost nobody who can program&hellip; Even at the good universities, there&rsquo;s a significant percentage of the people who make it out the door after four years with with good grades that still can&rsquo;t program. And so while I think the variance is a little lower on a four year university degree, it&rsquo;s not that much lower.</p>
+
+<p>Jason Swett: Yeah, that&rsquo;s a good point. It still baffles me how that can be true, because you have to be like smart and hard work. To get good grades in a CS degree program, but it&rsquo;s definitely true that people graduate with CS degrees who can&rsquo;t program. I don&rsquo;t understand it.</p>
+
+<p>Noah Gibbs: Smart and hard working is a good phrase there. Because let me tell you, I&rsquo;ve worked with some smart, hard working people that were terrible programmers, many of them with very good hearts. The thing is that being smart and hardworking is not enough by itself. And that&rsquo;s hard. I mean, genuinely all round, for everybody. That&rsquo;s hard. And you don&rsquo;t really want to fail those people. But you also don&rsquo;t really want to pass them. And so different universities handle that differently.</p>
+
+<p>Jason Swett: Yeah. So what else do you think it takes to be a successful programmer, other than being smart and hardworking?</p>
+
+<p>Noah Gibbs: Well, so just to put my bias flat on the table here and make it obvious, I learned programming a long time ago. And C Programming is kind of different than Ruby programming. I mean, I love Ruby programming. It&rsquo;s what I do day to day, I&rsquo;m not trying to put Ruby programmers down and it&rsquo;s what I do now. C Programming is hard in a way that Ruby programming is not. Which is one reason we mostly do more Ruby programming and less C Programming these days. We just get a lot more done. If it&rsquo;s not that hard to fight the machine to get anything done. Being a C programmer required a surprising amount of mastery of a bunch of random skills in the same way that getting hired used to require good handwriting. It&rsquo;s not that it&rsquo;s necessarily needed to express a problem. But the way we used to express problems required all this extraneous stuff. I don&rsquo;t know if you&rsquo;ve ever had to do <a href="https://en.wikipedia.org/wiki/Bitwise_operation">bitwise manipulation</a>. But the thing is, much like linked lists, bitwise manipulation was one of those things where it was hard to get out of bed in the morning in C without doing a significant amount of bitwise manipulation. Because that was just how you arranged everything in the world. And it&rsquo;s not that it&rsquo;s a vital skill to expressing problems. We stopped using C, we started using scripting languages and they suddenly people can do that without bit manipulation. Now, it&rsquo;s not required. Magic! But the old tools required those things and so if you didn&rsquo;t have a good feel for bit manipulation after a few years, well, there were some pretty serious limits to how well you could do in C. Thinking in <a href="https://en.wikipedia.org/wiki/Pointer_(computer_programming)">pointers</a>: when I say pointers, you know what I mean?</p>
+
+<p>Jason Swett: Yeah.</p>
+
+<p>Noah Gibbs: People who are listening won&rsquo;t. So for a pointer, first of all, imagine that you could take all the memory in the machine, from the first byte to the second byte to the third byte all the way up to the very top byte. For a variety of reasons, that&rsquo;s not how we do it anymore. But pretend you could just number it straight, you know, zero to the top. This literally used to be how pointers work. And you just assigned the name zero to the first byte and one and then two, and then three, and then for all of the bytes in order. And so a pointer basically keeps the address of the thing instead of the thing itself. But you have to keep that address of the thing in something because it&rsquo;s a variable. And so you can take pointers to pointers, and you can do all these things. C requires you to use pointers constantly. And pointers are a great example of something that aren&rsquo;t necessarily required by the problem. I mean, if you and I say I&rsquo;m going to keep a stack of things, and I&rsquo;ll push the things on the stack, and I&rsquo;m going to pop the things off the stack and the order is going to be that the most recent thing I pushed is the one that comes off. And the one I pushed the longest ago is the one that comes off last. Nothing I just described requires knowing pointers. But if you&rsquo;re writing in C, it does. And if you have trouble juggling pointers, what I just described is really hard in C, because you have to do it through pointers. And it&rsquo;s not inherent to the problem. We&rsquo;ve found better ways to express that problem that don&rsquo;t require you to be able to juggle pointers. Yay, fabulous! There&rsquo;s no reason that problem should require that but when I learned it&hellip;</p>
+
+<p>Jason Swett: Got it. Yeah. So there&rsquo;s a lot more lower level things that you have to occupy your your attention with, then a language like Ruby where you can just deal with the higher level stuff and not have to worry about memory locations and stuff like that.</p>
+
+<p>Noah Gibbs: Yeah, exactly. There, there comes a time performance was when you need the computer to do something as close to its theoretical possible speed as possible. If you want it to be able to do something at 90% of the speed the computer was was theoretically capable of suddenly, you&rsquo;re right back in pointers and bit manipulation. And for all of these things, you&rsquo;re also in assembly language, because if you actually needed the computer to do something 90% of as fast as it could possibly do it, assembly language is the only place to do that. It&rsquo;s just that we do so little that requires that. Game programmers do that for a little of what they do. And they probably have the highest actual speed requirements, day to day, of anybody.</p>
+
+<p>Jason Swett: Yeah. For my work, I&rsquo;ve never have had to drop down to that low of a level. But even with performance optimization, usually code that is completely unoptimized is completely fine most of the time. And then there&rsquo;s just a handful of bottlenecks that sometimes I have to go back and clean that up. But my career has been maybe maybe fairly typical in the sense that I haven&rsquo;t worked for a lot of startups serving millions of users or something like that. It&rsquo;s just small back office applications, that kind of thing.</p>
+
+<p>Noah Gibbs: Well, frankly, there aren&rsquo;t very many of those. I mean, to be at the level where you need to do massive optimization, you need to be dealing with a startup, it needs to be <a href="https://www.investopedia.com/terms/b/btoc.asp">b2c</a>, it needs to be business-to-consumer, it needs to be low margin, it needs to be you don&rsquo;t make very much money off each individual user. And it needs to be successful enough to have a huge number of those. We immediately think of Google and Facebook, but there&rsquo;s a reason there aren&rsquo;t many Googles and Facebooks. If you&rsquo;re going to have, the startups be a household name to millions or tens of millions or hundreds of millions of people. Like how many of those can there be? People aren&rsquo;t going to memorize 35 of them. There&rsquo;s a ceiling, there&rsquo;s only so many household names tht people are going to use because after about five, they&rsquo;re out of attention for it. Fair. And so that means while we think of that as kind of the absolute apex of the art. Which in one direction, it is, as far as being able to do something difficult, for a lot of people, fast and cheap. That is the apex of the art, but it turns out there are a lot of different apexes of the art. There are a lot of different hard problems and that&rsquo;s just one of them.</p>
+
+<p>Jason Swett: Yeah, the application I&rsquo;m working on now, there&rsquo;s only about 30 people who actually use it. But the volume is in the breadth of functionality. We&rsquo;re constantly making it do - well, I guess that&rsquo;s true of a lot of stuff. But we need a lot of feature richness as opposed to a huge amount of scale.</p>
+
+<p>Noah Gibbs: Yeah. Well, you and I both live in Ruby land a lot of the time. And, yeah, in the <a href="https://railswithjason.simplecast.fm/noah-gibbs-3">&quot;when not to use rails&rdquo;</a> thing we talked about, part of what we talked about there is the real question is how much of your budget goes to just running your application servers? How much are you literally paying for cycles or paying for memory, versus how much of your time is paid to engineers who write on that? And for the vast majority of engineers, most of the money goes toward engineers, the computer time is just not that expensive. And so if you could pay 20% more for computer time or two times or three times as much for computer time to speed up your engineer 20 or 30%? Your accountant could sit there with a calculator and in five minutes tell you there&rsquo;s no question, pay for computer time because it&rsquo;s cheaper than engineer time.</p>
+
+<p>Jason Swett: Yeah, definitely.</p>
+
+<p>Noah Gibbs: Oh, I was gonna say, I promised you a minute ago that I could give you a quick summary of what <a href="https://en.wikipedia.org/wiki/Big_O_notation">big O notation</a> is actually good for. So I&rsquo;m going to give you a couple of assumptions. And you can decide what you think of them. But I&rsquo;ll tell you, they&rsquo;re important assumptions for the explanation. You don&rsquo;t have to believe them. But they&rsquo;re important to the explanation. So most code that you write, you don&rsquo;t know how it&rsquo;s going to be used. Some code that you write, and you don&rsquo;t know which, is going to wind up having a lot more objects fed into it than you think it is. You&rsquo;re going to get a lot more users or one of your users is going to put a list of 300 things into a report that you think has 10. There&rsquo;s going to be some things where it receives a lot more pieces of input than you thought it did. It&rsquo;s good to have a feel for any given thing you do in a given data structure and to give an algorithm even really simple stuff. It&rsquo;s good to have a feel for how it behaves when you put a lot into it. And you want to avoid algorithms that tend to completely fall down and die when they get 10 times as much input as they wanted. It&rsquo;s okay if they slow down, but you want to avoid the ones that just completely fall down and die.</p>
+
+<p>So you&rsquo;d like to be able to look at an algorithm, you can put some time into it, you&rsquo;d like to be able to check it and be able to say, &ldquo;this is what it does as the number of things I put in gets big.&rdquo; Now, there&rsquo;s a bunch of ways you can do that. And the problem with most of the really exact ways to do it is you have to have an enormous amount of understanding of the algorithm. You have to keep track of the number of steps and how long they all take. And it depends how your machine is going. You know, if it uses this amount of memory, how much does that slow you down? These are hard problems. I used to spend all day on the statistics behind those problems. Not only are they hard problems in the sense that you&rsquo;d have to be smart, but worse, they&rsquo;re hard problems in the sense that you would have to know a bunch of stuff you don&rsquo;t want to have to know about your algorithm. You would have to do a bunch of other measurement that you would rather skip doing. Because this takes a huge amount of time and huge amount of competent-people-time, so try to avoid it where you can avoid it. Instead, what you can do is you can look at these algorithms and say, all right, I don&rsquo;t want to have to measure every individual step. But I do want to know how it behaves as I put a lot of things into it. How can I characterize what happens when a lot goes into it? And the answer mathematically, at least a good simple answer mathematically, is: pretend you have a whole bunch of things already in it, and then see what happens when you, let&rsquo;s say, double it. Now, for any given algorithm, if you have 10 things in it, and you double it, that&rsquo;s going to be kind of unpredictable how it changes. But 20 things in it and you double it, that&rsquo;s going to be easier to predict. It turns out 3000 things in and you double it, these things get easier to predict because the more things you have, the more uniform the algorithm&rsquo;s behavior is. And the reason for that is the same as in profiling. People tell you that there&rsquo;s 10% of your program that&rsquo;s 90% of your time. In the same way, that algorithm is going to have one thing that dominates its behavior when there&rsquo;s a massive number of objects. Because there&rsquo;s one step that&rsquo;s going to be the slowest one, and it has a massive number of objects. And the more objects it has, the slower that step is going to be. And the less anything else matters, there&rsquo;s going to be whatever that one slowest step is. So the difference between the different kinds of slowest steps are what happens when you double.</p>
+
+<p>If you double the number of things, and it takes twice as long to process then that&rsquo;s a linear algorithm, that&rsquo;s literally O(n). If you double the number of things, and it takes four times as long, that&rsquo;s quadratic, that&rsquo;s O(n^2). If you double the number of things, and it takes eight times as long, that&rsquo;s cubic, that&rsquo;s O(n^3). And there are a few little weird ones like O(n log n), the fastest <a href="https://en.wikipedia.org/wiki/Sorting_algorithm">sorts</a> are O(n log n). And that basically means they&rsquo;re mostly linear. But if you have it every time you multiply the number of things by 10 times say, it adds a small constant to the total. So the first &ldquo;times 10&rdquo; adds a small constant, the next &ldquo;times 10&rdquo; adds a small constant, the next &ldquo;times 10&rdquo; adds a small constant. So O(n log n) is slower than linear, but it&rsquo;s barely slower. It is slower in a way that barely matters. As the number of objects gets large, it has to be multiplied by an enormous number for that to matter. Mostly, it&rsquo;s just linear.</p>
+
+<p>And so for any given an algorithm that you can trot out, which includes the stuff you write, but it also includes whatever sort algorithm Ruby is using, or whatever sort algorithm you&rsquo;re using for this, or you know, what, whether you write the algorithm or it&rsquo;s in the standard library, it&rsquo;s going to have some algorithmic behavior. And so if they say it&rsquo;s O(n^2) then you know that if the input is 10 times as big as you thought it was, you&rsquo;ve got a problem, because it&rsquo;s going to take 100 times as much resources. Whereas if it&rsquo;s linear then if it&rsquo;s 10 times as big as you thought it was just going to take 10 times as much in the way of resources, which is, you know, usually fine. I say usually fine, but you can see how much it takes. And if it&rsquo;s already taking, you know, 3% of your CPU, maybe you should look carefully at that, that&rsquo;s a high enough number that is linear, you know, multiply by 10, and suddenly, it&rsquo;s a 30% of your CPU and that&rsquo;s problem. Whereas if, like most things, it&rsquo;s taking this tiny, tiny fraction of your CPU, maybe O(n^2) is fine. Because you say, well, maybe I get up to 100 times as many things, as I expected, that&rsquo;s 10,000 times the amount of input, this is still going to be incredibly fast, I don&rsquo;t care. But the important thing is what happens when I double it. And the hard part of that is that that changes, you know, when you when you have three things, and you double it, that&rsquo;s one thing when you have five things, and you double, it&rsquo;s another. And so for O(n) notation, what they say is, the only thing that matters is what happens when you double it, and you have a lot already. And all that&rsquo;s kind of annoying to explain, but you can see why it&rsquo;s useful.</p>
+
+<p>Jason Swett: Yeah. And I think that&rsquo;s a much better explanation than I&rsquo;ve heard elsewhere, because that seems relatively easy to understand.</p>
+
+<p>Noah Gibbs: Yeah. I mean, you can find good blog posts where they do things like &ldquo;here&rsquo;s my algorithm,&rdquo; and they graph the result. And basically what this is saying is if you take one of those graphs and the graph goes way off to the right, so you have a lot of things? At that point, it&rsquo;s either gonna look pretty linear, it&rsquo;s going to be a pretty straight line, or it&rsquo;s gonna look <a href="https://en.wikipedia.org/wiki/Parabola">parabolic</a>. You know what I mean by parabolic? Yeah. U-shaped. And so that&rsquo;s quadratic. And it&rsquo;s not that you can necessarily eyeball that. I don&rsquo;t necessarily know a cubic curve from a quadratic, if I&rsquo;m just eyeballing the graph. But you don&rsquo;t actually have to necessarily care if it&rsquo;s quadratic versus cubic. Mostly you care, does it rise really fast? Or does it rise fairly slowly. And if you&rsquo;re lucky, and you&rsquo;ve got something that&rsquo;s like, O(n log n), rather than O(n log n), then in fact, it&rsquo;s going to level off, it&rsquo;s going to be asymptotic, which is to say it will&hellip; Okay, log(n) isn&rsquo;t actually asymptotic. But it looks like that it levels off and it rises very, very slowly as the numbers get large.</p>
+
+<p>Jason Swett: Okay. Okay. Yeah, that seems that does seem useful to know if you find yourself in that kind of situation, which I personally have not yet, but I can see why it&rsquo;s useful to the people who need it.</p>
+
+<p>Noah Gibbs: Yeah, well as your number of users goes from 30 to 300, or 3000&hellip; Not only will out of those 3000 people&hellip; You&rsquo;re going to have more requests because 3000 people make more requests than 30 people&hellip; you&rsquo;re also going to have a few weird outliers who want to do something you didn&rsquo;t expect. And that&rsquo;s usually where the bad surprises come from. Is my experience the difference between 3000 people and 30 people isn&rsquo;t that you have 100 times as many requests. That&rsquo;s pretty easy to handle. It&rsquo;s that one of those 3000 people wants to do something weird.</p>
+
+<p>Jason Swett: Yeah, yeah, I read something about Google once it said, like, when you have a million users per day, one in a million things happen every day. Which is kind of crazy. But that&rsquo;s true. Yep.</p>
+
+<p>Noah Gibbs: Yeah, no, Google is at such a scale that they carefully buy all the same hardware, they buy hardware in giant batches for their data centers. Because the kind of errors on motherboards that you will never never see as a random individual user happen constantly for them. Not only are they running calculations all day and a lot of those calculations matter, but they&rsquo;re running it with thousands and thousands of machines running next to each other. And so something that you you wouldn&rsquo;t see in 1000 years on your one machine, you will see in one year on their thousand machines, or 10 times a year on their 10,000 machines.</p>
+
+<p>Jason Swett: Yeah, wow. Yeah, yeah, we&rsquo;re nowhere near there yet, but maybe someday.</p>
+
+<p>Noah Gibbs: Well, I was gonna say&hellip; I can&rsquo;t say I aspire to that. It sounds like a fun challenge, but it doesn&rsquo;t&hellip; Well, okay. It sounds like a conceptually fun challenge. That would be a giant pain day to day.</p>
+
+<p>Jason Swett: Yeah, yep. Cool. Yeah. So what now?</p>
+
+<p>Noah Gibbs: What now? Well, I mean, I could ask you about other computing topics, but it sounds like you&rsquo;ve really answered that question. I mean, it sounds like the stuff they showed you wasn&rsquo;t terribly useful. And it&rsquo;s not necessarily that it has no use but like you say they didn&rsquo;t do a good job of talking about that. So do you find you do much educating yourself on programming beyond work at your job? What do you do to get better these days?</p>
+
+<p>Jason Swett: Reading is definitely one. I&rsquo;m Definitely more of a book reader than a blog post reader. I find it very difficult to read on the computer for two reasons. One is that it&rsquo;s just a really hostile environment to reading, because of all the distractions. But not even the distractions. Even if my computer were not connected to the Internet, and there&rsquo;s nothing interesting to do on my computer, just like sitting in my chair and looking at a screen and scrolling through&hellip; It&rsquo;s just not a good way to consume information, at least for me. But I think probably for most people. So books, and then let&rsquo;s see, I&rsquo;m not a big podcast person because I find the value, the educational content is so sparse, you have to listen to like an hour&rsquo;s worth of noise to get like five minutes worth of worth of value. Which is funny, you know, we&rsquo;re recording a podcast right now and I host a podcast but I don&rsquo;t listen to podcasts myself. And then I study. So I think the way that I educate myself in general is mostly by reading. But I educate myself in other areas that I think are adjacent to programming that overlap. I think you and I have talked about this a little bit. I have a few books that I bought on logic and epistemology. That stuff is obviously pretty universal. So I like to bring those things back to programming. And I think you even saw those couple of posts I wrote about how you can apply formal logic to debugging and stuff like that. So I found that interesting. And then lastly, talking with other smart people, although, unfortunately, today, I don&rsquo;t have access to a huge amount of other people. I&rsquo;ll bounce ideas off of my boss. And you and I are talking right now. But I&rsquo;m the only programmer where I work And so I don&rsquo;t have colleagues that I can talk to. So there&rsquo;s not a lot of that kind of learning that happens for me today. But over the years, when that has happened. It&rsquo;s been pretty valuable.</p>
+
+<p>Noah Gibbs: That makes sense. And yeah, that can be hard. I mean, being being the only one there and nobody to ask questions of, that can be rough. You also do things like promote your podcast. And a lot of what makes the entrepreneur-type activities hard, is that it often feels like there&rsquo;s nobody to ask. And often you&rsquo;ve got this problem staring you in the face. And there&rsquo;s a problem and you could go to an expert, but it&rsquo;s you and the problem staring at each other and you fix it or you don&rsquo;t.</p>
+
+<p>Jason Swett: yeah, yeah. And I&rsquo;ve learned to rely on myself more over the years than I used to, especially in recent years. Because sometimes you just have to do it yourself. My boss is a doctor, and he&rsquo;s talked about&hellip; Well, I don&rsquo;t know if he explicitly said this or I just kind of inferred it. But like when a patient comes to the doctor, there&rsquo;s like nobody to escalate the issue to. Like, you&rsquo;re it. You can&rsquo;t go to some other higher up person and be like, Hey, this is too hard for me, I need you to do it. No, you need to do it. One time I was at a family gathering. And my son started choking on a hot dog. He was like two or three at the time. And he it became clear that it was pretty serious. It wasn&rsquo;t just going to go away by itself. And I started getting really worried and I&rsquo;m like, somebody should do something. And then I looked around and I&rsquo;m like, Oh, wait, I am his dad. I&rsquo;m the person who needs to do something. And so I gave him the Heimlich maneuver, and it eventually worked. And he lived, I&rsquo;m happy to report. But yeah, it&rsquo;s those kinds of situations. I embrace that more where when I encounter a problem today, I look at it and say I have to. Which is really really the case, there&rsquo;s nobody else for me to go to in my current job. And I say, I need to figure this out. And so I&rsquo;m just gonna hunker down, and it might take an hour, or it might take a month, but I&rsquo;m just going to work at it until I figure it out. And something that my bosses has talked about to me is, you can always get past it. It might take an unreasonable amount of time and effort to get past it. And you might decide to give up cuz it&rsquo;s just not worth fixing. But you can always fix it, if you just give it enough effort, which is totally true. Here&rsquo;s something. Here&rsquo;s the way that I like to think about it. And this predates any of the conversations that I just mentioned. But let&rsquo;s say I encounter a programming problem. And I don&rsquo;t understand the error message. I don&rsquo;t understand a lot of things about it. I rhetorically asked myself, Well, what if I understood everything about this? Like what if I knew, what if I was intimately familiar with this entire code base, I was an expert in the language. I knew everything about the operating system. If I understood everything, then I wouldn&rsquo;t have a problem because I would understand what&rsquo;s happening. So there&rsquo;s, there&rsquo;s something between the amount of knowledge I have now and knowing everything. There&rsquo;s some spot along that continuum, where my knowledge would overpower the problem. And so once I frame it that way, I&rsquo;m like, Okay, well, I just need to gain more understanding. And that basically always works. Fair enough. There&rsquo;s a similar but different thing I tend to do, which is, what do I expect to happen? What do I see happening? Where are there similar things, where are they different things? Okay, now, where I&rsquo;m seeing something I don&rsquo;t expect, how can I take a smaller step in between and separate out one more step into either it&rsquo;s doing what I think or it&rsquo;s not doing what I think? Yeah, a formal assessment of problem goes a huge amount. Because I find that if I&rsquo;m ever trying to solve a problem, and really getting nowhere, sometimes it&rsquo;s because I haven&rsquo;t really pinned down what the problem actually is. And it&rsquo;s fairly hopeless to try to solve a problem when you don&rsquo;t even know what the problem is. And it might sound trivial, but it&rsquo;s like more. It can be non trivial to nail down the problem and figure out what it is. And like sometimes, though, if it&rsquo;s a complicated enough problem, I&rsquo;ll go as far as to actually write down what all the attributes of the problem are. I&rsquo;ll write down what I know for sure versus what I only know with 90% confidence and be very careful about separating what I know for sure from what I don&rsquo;t know for sure. And often just going through that process, you don&rsquo;t even need to finish that process because partway through, you&rsquo;ll realize what&rsquo;s wrong.</p>
+
+<p>Noah Gibbs: Yep. Absolutely. I mean, saying what the problem is sounds like it should be easy, but it&rsquo;s the same kind of easy as saying &ldquo;Oh, well, we write down a set of instructions for doing a thing. It&rsquo;s glorified writing down a recipe, how hard can it be? Right?&rdquo; And the answer is: very hard. It can be very hard.</p>
+
+<p>Jason Swett: Yeah. And there&rsquo;s different levels of depth you could go to, because like, let&rsquo;s say you have some kind of physical ailment, and you&rsquo;re like, my head hurts. It&rsquo;s like, Okay, well, you could say that. That&rsquo;s the problem. My head hurts. But like, you could go one layer deeper and be like, okay, the problem isn&rsquo;t exactly that your head hurts. The problem is that you, I don&rsquo;t know, something else. I don&rsquo;t know enough about, about stuff like that in order, but you know what I mean? Like, maybe you, you&rsquo;re having some kind of allergic reaction to something you ate, and that&rsquo;s the problem. Okay, now that we have that more specific problem, how do we go about solving that? And you can even go more specific than that, conceivably. And so that&rsquo;s part of it, too, is going to the appropriate level of specificity.</p>
+
+<p>Noah Gibbs: Yeah. In some sense, you can always have a problem. If you&rsquo;re willing to be exact enough, you can just keep defining until the world&rsquo;s wrong at some level.</p>
+
+<p>Jason Swett: Yeah, very true.</p>
+
+<p>Noah Gibbs: I mean, it sounds like a joke, but I don&rsquo;t. I mean, that is that is kind of what the the process of refactoring and adding features and moving forward and expanding a program that already works is about is, you find something new to be dissatisfied with.</p>
+
+<p>Jason Swett: Yeah, yeah. And everything has like two sides to it. You could consider everything a problem, or you could consider it an opportunity.</p>
+
+<p>Noah Gibbs: Yeah. And yeah, those two are, again, kind of the same thing. You&rsquo;re defining the gulf between where you are and where you want to be. In both cases, there&rsquo;s an opportunity to stop having a problem.</p>
+
+<p>Jason Swett: Yeah, because I could say that I consider my codebase to be completely fine. I&rsquo;m 100% happy with it. But I have an opportunity to refactor this area and make it less expensive to maintain over the coming year. I could look at it that way. Or I could say, I&rsquo;m not quite satisfied with my code base. I have a problem. problem is that this area needs refactoring in order to make it less expensive to maintain over the coming years. That&rsquo;s the exact same facts and reality. I&rsquo;m just looking at it as a problem in one attitude and an opportunity in another.</p>
+
+<p>Noah Gibbs: Yeah, there&rsquo;s a, there&rsquo;s a <a href="http://www.paulgraham.com/taste.html">fun Paul Graham article</a>, and I&rsquo;m gonna forget completely which one this is. But he talks about how one of the habits you need to cultivate to be a good startup founder is to be dissatisfied with things. And one of the hard things is, like, it&rsquo;s hard to walk around all day feeling dissatisfied with where you are.</p>
+
+<p>Jason Swett: I&rsquo;m pretty good at it.</p>
+
+<p>Noah Gibbs: Well, and the thing is that by sort of having that constant itch, you&rsquo;re a lot more likely to be looking around for ways to fix it because it genuinely bugs you. And you have to be at the point where it bugs you enough that you&rsquo;ll look for solutions.</p>
+
+<p>Jason Swett: Yeah, that&rsquo;s definitely me. I have that mental disease to the extent that I started writing a book about like, everything in the world that I find fault with and I started getting very specific. Think about, for example, the automatic devices in bathrooms and the dials on cars and the the UI is to gas station pumps and stuff like that. But I got a certain portion of the way into this book. And I&rsquo;m like, man, I just sound like really cynical and negative. And so I abandoned the project. The way that it maybe could be done tastefully is if I made it funny. But unfortunately I couldn&rsquo;t figure out how to make it sufficiently funny to make it worthwhile. But yeah, I just go around all day being dissatisfied with all kinds of stuff in very specific ways. Like one quick example, is cars. For reasons I won&rsquo;t go into I&rsquo;ve driven a lot of different cars in the last couple months. But in a lot of them, you turn the temperature up on the temperature controls by cranking a knob and you control the intensity of the fan by pushing the up and down buttons, which seems so wrong to me. It should be the exact opposite. Because usually with the fan, at least for me personally, I think probably most people, the difference between where the fan currently is and where you want it is usually large. Usually it&rsquo;s way down and you want it way up, or it&rsquo;s way up and you want it way down. You usually don&rsquo;t say I want the fan to blow ever so slightly harder. That&rsquo;s never the case. So a knob is more appropriate for the fan. But with the temperature. Do you ever say, Oh, it&rsquo;s 65 degrees in this car? I want it to be 85 degrees. No, it&rsquo;s like it&rsquo;s 65 degrees in this car. I want it to be 68 degrees. And so you press the button so that should be that should be the Up Down buttons and not the knob. So yeah, I&rsquo;m very adept at being dissatisfied with things almost to the point of being unable to operate in the world.</p>
+
+<p>Noah Gibbs: Yeah. What I&rsquo;d say about that i think i think you&rsquo;re on the right track with &ldquo;funny.&rdquo; There are a lot of people who spend their time being dissatisfied and they make it a service. I mean, I grew up in Texas, so I think of <a href="https://en.wikipedia.org/wiki/Erma_Bombeck">Erma Bombeck</a> who wrote books like <a href="https://www.amazon.co.uk/Grass-Always-Greener-Over-Septic/dp/0345471725">The Grass is Always Greener Over the Septic Tank</a>. But it I mean, it&rsquo;s funny. It&rsquo;s complaining about how life is silly. And you&rsquo;ve seen you&rsquo;ve seen so many things like that. But yeah, people read it for the humor. They read it for the charm. And so when you think about technical stuff, you know, UX problems and stuff like that, my personal guideline is Gary Bernhardt. You know, Gary Bernhardt of <a href="https://www.destroyallsoftware.com/screencasts">destroy all software</a>. If you follow <a href="https://twitter.com/garybernhardt">his Twitter</a>, he does a lot of complaining about all the stuff that&rsquo;s broken. He really does. And sometimes he just specifically when talking about how the entire world is broken. Which it is, you know, he&rsquo;ll just go through thing thing, thing, thing, thing thing, this is what I found in the last like four hours of all the stuff that&rsquo;s broken. And he&rsquo;s right, of course. I mean, I&rsquo;m not I&rsquo;m not disagreeing with it.</p>
+
+<p>Jason Swett: Yeah, but that&rsquo;s not what Twitter&rsquo;s for. I don&rsquo;t know what it is for.</p>
+
+<p>Noah Gibbs: Absolutely. But my personal guideline is you have to be at least as charming and funny as Gary Bernhardt because he&rsquo;s somewhat charming and funny, but mostly he&rsquo;s angry about it. And mostly he&rsquo;s just kind of raw angry about it. He&rsquo;s not mostly doing it in a way that&rsquo;s charming and funny. He&rsquo;s mostly doing it in a way that&rsquo;s angry. But you have to be at least that charming and funny, because a guy like that extremely practiced at it and extremely good and extremely smooth at it. He&rsquo;s the guy who wrote the web talk, you know, <a href="https://www.destroyallsoftware.com/talks/wat">the JavaScript web talk about all the stuff that&rsquo;s wrong with JavaScript</a>. If you haven&rsquo;t seen it, it&rsquo;s amazing. It&rsquo;s a really short.</p>
+
+<p>Jason Swett: Yeah, so I think that one of the things that&rsquo;s important to learn is that it&rsquo;s probably really unproductive for me to complain about everything that I find wrong in the world. Because most of the stuff, there&rsquo;s nothing I can do about. And me complaining on Twitter about how Donald Trump is stupid or something like that doesn&rsquo;t accomplish anything. At all. And it only upsets me and the people who follow me on Twitter. So what you need to do if you want to make something better is pick something. And it&rsquo;s difficult for a person like me because I just want to do everything possible and sample everything life has to offer. But if you want to actually accomplish something, you have to pick something so incredibly narrow, and just spend years on just that one thing in order to make it better. I could conceivably go be an engineer and make dials on cars better or something like that. And that can be my contribution to the world, is I made car dials better. But for better or worse, your contribution can be bigger if you if you want to go and try to be the President of the United States or something like that.</p>
+
+<p>Noah Gibbs: And then people can complain all day on Twitter about how dumb you are.</p>
+
+<p>Jason Swett: Exactly. One of the one of the perks of the job. Yeah, but you probably have to just pick something narrow and make that thing better is the the sad truth.</p>
+
+<p>Noah Gibbs: Well, we&rsquo;ve all got the fantasy of being like the kind of person like Steve Jobs who can go just redesign something and wave to your army of minions to make it so. But even Steve Jobs took a long time being Steve Jobs before he was allowed to do that.</p>
+
+<p>Jason Swett: Yeah, I mean, I want to be like Leonardo da Vinci or Benjamin Franklin or something like that. But not everybody can be one of those people.</p>
+
+<p>Noah Gibbs: Yeah, well, with Leonardo da Vinci the thing I like to remind people of is the word engineer comes from an older word &ldquo;ingeniator&rdquo; that you almost never hear and it means a person who operates a siege engine. And in fact, Leonardo, one of the first engineers did precisely that. If you go out you can find <a href="https://lettersofnote.com/2012/03/28/the-skills-of-leonardo-da-vinci/">a great letter that he wrote when seeking a new patron</a> about how he could make flaming goo that would land on top of soldiers coming into the castle and stick to them continuing to burn and he could make also little little bridges that would protect your guys from the same thing. But he had a whole list, I mean, it was a 12 or 14 item list or something like that. All the different siege engines that he could make. Because on the one hand he did paint and helicopter design and all of these cute things on the side. But he was very aware that those were hobbies and what he did for a living was to make siege engines that would kill people.</p>
+
+<p>Jason Swett: I didn&rsquo;t really understand, I didn&rsquo;t know how he made a living. So that&rsquo;s interesting to understand. Another thing I read about that same&hellip; I don&rsquo;t know if it was that same letter or another letter he wrote to another prospective patron but he said, in one really famous one&hellip; Yeah, he said, I can design structures as well as anybody, I can paint, I can write music, I can design these contraptions and stuff like that. But actually most of the stuff in his letter was just bluster and he wasn&rsquo;t actually capable of a good portion of those things, at least at the time that he wrote the letter. So that was kind of funny to learn that. But I didn&rsquo;t realize that by vocation he was an engineer and those other things were just hobbies.</p>
+
+<p>Noah Gibbs: Well, I mean, hobby is a bit&hellip;</p>
+
+<p>Jason Swett: I don&rsquo;t know, it doesn&rsquo;t do it justice. Oh, yeah. What do you do is a hobby, Oh, I&rsquo;m one of the most influential painters of all time. That&rsquo;s my hobby.</p>
+
+<p>Noah Gibbs: Well, and some of that happened later on, much of it after he was dead. But no, what I mean is he had a patron and as long as he kept the patron happy, he had funding for all kinds of fun projects. Because if it turns out if you&rsquo;ve got a rich patron then you&rsquo;re successfully building out this set of siege weapons for him and he&rsquo;s happy with your siege weapons&hellip; You say, hey, I want a little bit of extra money to paint a series of oil paintings or I want a little extra money to build this helicopter thing and by the way, can you get me a couple of condemned prisoners to to strap to them every so often for trials&hellip; He&rsquo;ll say yes, you&rsquo;ve been doing great for me, the money is no problem. We&rsquo;ve got condemned convicts when you need them. I am going to need you to let the entire court watch while you strap this guy to the flying machine and have him die. But yes, we can totally do that. And that&rsquo;s a lot of it, is then as now, you can get away with a lot if you&rsquo;ve got backing from somebody who&rsquo;s very confident in you and likes your work.</p>
+
+<p>Jason Swett: Yeah, yeah, that&rsquo;s kind of an interesting thing. In my current job, my boss appreciates my what I can bring to the table a lot more than has been the case at any of my previous jobs. And I&rsquo;ve worked at jobs where like, the appreciation was just not there at all. To the extent that I got fired. It was funny, I went to this one job. It was like a six month contract to hire. And the six month intro period came and went and they didn&rsquo;t say anything. And so I went to my boss and I&rsquo;m like, so you know six months has passed are we going to do the to hire part of the contract-to-hire, or what&rsquo;s happening? And she&rsquo;s like, Oh, yeah, so about that, um, as far as the technical work has gone, we&rsquo;re completely happy with that, no problems there, but we don&rsquo;t like you. And so we need to let you go. And I was like, Okay, got it. Um, so the spectrum has been all the way to that. But it&rsquo;s been great to work for somebody who actually understands the value that I can provide and stuff like that. And it took me it took me, let&rsquo;s see, 2018 I was, let&rsquo;s say about 20 years into my career. It took me like 20 years to find that person. So Leonardo da Vinci got lucky in so many ways. Like, first of all, he won the genetic lottery. But then also he was just in the time and place where he could find the Was it the Medici family or whatever, who was who supplied him with the resources that he needed. In order to do all these things, and if he had not, if he had not had that, then they&rsquo;re probably we wouldn&rsquo;t know who he was because he wouldn&rsquo;t have the ability to do these things. Just like, you know, sadly for regular people like us who have to work for a living like a lot of these scientists, these famous scientists from the scientific revolution in Europe or the, the Enlightenment or whatever, they were, like, rich, they were like the equivalent of trust fund kids is my understanding. They didn&rsquo;t have to work for a living. And so they were freed up to do all this science, which I think is great for humanity and science and stuff like that. But unfortunately, it&rsquo;s not in the cards for us.</p>
+
+<p>Noah Gibbs<br>
+Well there have certainly been a lot of famous people who came from rich families. And really what they did was only possible because they came from rich families, you know, again, then and now. On the one hand, you can say, well, Elon Musk can do all of this because he succeeded wildly at PayPal. Well, he also came from a family that owned Emerald mines in South Africa. So there is that.</p>
+
+<p>Jason Swett: Yeah, all those things definitely add an advantage. And I don&rsquo;t know, you know, I&rsquo;m not ready to say that that&rsquo;s like good or bad because like, we&rsquo;re probably better off for having had a lot of those people having their time freed up so they can make these scientific contributions. It&rsquo;s of course unfair that not everybody in the world gets gets to have a, you know, a step up to the plate or however you want to phrase it. Um, yeah, I don&rsquo;t know if it&rsquo;s good or bad or what.</p>
+
+<p>Noah Gibbs: Yeah, I mean, I like to think of it not so much as good or bad as slowly improving year by year. We&rsquo;ve gotten to the point where more people get an opportunity. We&rsquo;ve gotten to the point where a lot of the opportunities are cheaper to try. We&rsquo;ve gotten to the point where a lot fewer just straight up starve to death before getting even a chance at the basics. While I understand people who don&rsquo;t like hearing that the whole world is getting constantly better and better&hellip; In just a straight-up statistical numerical sense, it&rsquo;s hard to deny it.</p>
+
+<p>Jason Swett: Yeah, yeah, it&rsquo;s very true. I&rsquo;ve read a couple of books on that topic, &ldquo;The Better Angels of Our Nature&rdquo; by Steven Pinker, which is about how violence has declined over time, and then enlightenment now, which is it&rsquo;s less focused on how things have gotten better and better, although that&rsquo;s a really big part of the book too. And it does make the case with irrefutable numbers. So yeah, that&rsquo;s very true.</p>
+
+<p>Noah Gibbs: Yeah. And, yeah, so I think again, it&rsquo;s that dissatisfaction thing. I think that in modern social problems, as in startup, technical problems, you start and you do something and it kind of works, and you do what you can to improve it. But you don&rsquo;t stop just because you&rsquo;ve gotten to a tolerable level. You keep trying to find things to improve and as long as you&rsquo;ve got that dissatisfaction, there&rsquo;s always something to fix. Or just see it as an opportunity.</p>
+
+<p>Jason Swett: Yeah. And thanks to our human nature, our level of dissatisfaction remains about constant. You know, even if your life improves drastically in a couple years, you&rsquo;ll probably be equally dissatisfied, which fortunately, goes both ways. Like if you get in a car accident and lose your ability to walk, you might be devastated for a short time. But then a few years later, you go back to your normal baseline of happiness.</p>
+
+<p>Noah Gibbs: Yeah. And I mean, you see some argument about, you know, exact baseline, but at the same time, yeah, like the <a href="https://en.wikipedia.org/wiki/Hedonic_treadmill">hedonic treadmill</a>. Exactly. Right, is just exactly, everybody&rsquo;s got a noticeable amount of satisfaction, everybody&rsquo;s got a noticeable amount of dissatisfaction. And even if there&rsquo;s a change in the proportions, the basic level isn&rsquo;t too far off. When when the Buddhists talk about, suffering is caused by attachment, they don&rsquo;t have an unspoken little rider at the end that goes &ldquo;unless you&rsquo;re rich. Then it&rsquo;s all right.&rdquo;</p>
+
+<p>Jason Swett: Very true.</p>
+
+<p>Noah Gibbs: I feel like I&rsquo;ve talked to you about what I came here to talk about. One thing I didn&rsquo;t really ask you directly, is, is there any of it that you really wish you&rsquo;d learned more about? Or is there any of that where you really can&rsquo;t see how it could possibly be useful and you wish you hadn&rsquo;t even spent the amount of time you know, looking glazed, as they talked about it over your head that you did?</p>
+
+<p>Jason Swett: I hate to sound like a cynical ingrate, but the honest answer is that it&rsquo;s the latter. There was not really anything that we touched on in school that I that I wanted to learn more about, or that I imagined could have been useful if we had gone deeper into it. With perhaps one exception. I had an assembly language class, and that I can see how it could be useful. I never actually found it useful. But unlike linked lists, which I never used, even in a tangential kind of way, unlike big O, which I&rsquo;ve never had to use for either&hellip; Assembly language, it&rsquo;s like you&rsquo;re learning a very fundamental building block of how everything works. And it would have been really nice if they had gone all the way, which is like, here&rsquo;s how our computer is built. Here&rsquo;s how the computer&rsquo;s hardware works. Here&rsquo;s the assembly language, here&rsquo;s how the higher level language on top of that works, and just gone down the whole thing. So you like really understand the whole thing. That would have been great. So maybe if they had gone further in that direction, it would&hellip;</p>
+
+<p>Noah Gibbs: Yeah, figuring out how to do that&rsquo;s always hard because I know people where that was essentially their undergrad. And I&rsquo;ll tell you that&rsquo;s about a five year project.</p>
+
+<p>Jason Swett: I can imagine.</p>
+
+<p>Noah Gibbs: Yeah, it&rsquo;s a good five year project.</p>
+
+<p>Jason Swett: I wonder how many people there are on earth today who know how everything works. If everything got destroyed, and we had to rebuild it all. And by everything, I just mean everything in computers. Like, would that be possible? I don&rsquo;t think so.</p>
+
+<p>Noah Gibbs: Yeah. Well, there are people who can go from sand to processor design. I don&rsquo;t know if there are any of them that could build a processor factory properly. And there are people who could go from&hellip; There are people who can build the factory, obviously, we keep getting new factories. But yeah, I don&rsquo;t think you would find even one person anywhere in the world who could genuinely go from sand &ndash; and aluminum these days, or copper, I don&rsquo;t remember copper or aluminum &ndash; up through what you or I would consider pretty good state of the art software knowledge. Because there&rsquo;s such a firewall between the software and the hardware people. I mean, it&rsquo;s not that there&rsquo;s no overlap, but my experience is the hardware people are not interested in the far high end of software and vice versa. They&rsquo;re both really interesting domains. I mean, I&rsquo;m a dabbler. For somebody who hasn&rsquo;t seriously worked in hardware for a living, I&rsquo;m way in the direction of what you&rsquo;re talking about. Which does not mean that I could melt sand and make processors, but I at least know something about each of those steps. And yeah, I&rsquo;m unusually broadly educated, and I&rsquo;m nowhere near being able to do the hardware end of it.</p>
+
+<p>Jason Swett: Yeah, yeah. It&rsquo;s pretty interesting to think about, just in general, like, we&rsquo;re standing on the shoulders of our ancestors for pretty much everything. Yeah, yeah, like, just looking around the objects in my room. Like in the room I&rsquo;m sitting in right now, this microphone, the windows, the my bike, like all these things were invented by people who aren&rsquo;t alive anymore. And so not that it would not that we would ever have a reset like a complete reset, where we&rsquo;d have to do everything over again, but it&rsquo;s interesting how much we&rsquo;re dependent on the contributions of people who passed a long time ago.</p>
+
+<p>Noah Gibbs: yeah, well, knowledge can be lost. I mean, the the treatment for scurvy has been <a href="https://www.mentalfloss.com/article/24149/how-scurvy-was-cured-then-cure-was-lost">discovered and lost</a> at least one major time. And probably more than that. There are things like, China had the ability to sail boats most of the way around the world. And then an emperor decided he wasn&rsquo;t into that. And he told everybody to stop doing that and destroyed the shipyards. And then, you know, then, yeah, 10 years later, they didn&rsquo;t. And then after those folks died, having not again ever done that, then they didn&rsquo;t.</p>
+
+<p>Jason Swett<br>
+Wow&hellip; Also some like primitive navigation techniques. primitive is kind of an ironic word to use, even though i think that&rsquo;s that&rsquo;s what it&rsquo;s normally called. But like, tribes, people who are oceangoing people like they, they know how to like read the waves in such a way that they can like just completely insane levels. have knowledge of their environment in order to be able to tell how to get from point A to point B is just lost. Because now like, I don&rsquo;t have the ability to, to navigate just by looking around at the environment and the vast majority of people don&rsquo;t either. And so that&rsquo;s another thing that&rsquo;s been gained and lost.</p>
+
+<p>Noah Gibbs: Yeah. Well, there are a lot of skills that are very hard to transmit through a book, and an awful lot of those, if you if you break the chain of people, you lose it.</p>
+
+<p>Jason Swett: Yeah. I was saying the other day to somebody, I have the thought of writing down and teaching everything that I know about programming. But I don&rsquo;t know that I could really do that effectively, because so much of what I know about programming could never be effectively conveyed via a book.</p>
+
+<p>Noah Gibbs: Yeah. And it&rsquo;s the other thing is a lot of your knowledge is not the kind of thing you could turn into words. And so when you tell them to sit down and do what you do, and spend time debugging on a project of a similar kind, they&rsquo;re actually going to learn something different from it than you did.</p>
+
+<p>Jason Swett: Yeah, yeah, and some things you just learned from seeing like, it would take five seconds to convey the general concept. But to really understand it, you need to see, here&rsquo;s one example. Now, here&rsquo;s an example that&rsquo;s 99% the same, but 1% different in this very nuanced way. And then repeat that thousands of times. That&rsquo;s the only way to get certain kinds of knowledge. And that&rsquo;s just not possible. I mean, you could put 10,000 examples in a book, it would just be a crazy book.</p>
+
+<p>Noah Gibbs: Yeah, well, and the thing is, again, they won&rsquo;t necessarily learn the same thing from the same examples. One of the great joys of the way we reconceptualize everything and you know, come up with different programming paradigms and stuff like that. And what we do is, is in some ways, more like writing a novel than it is like deriving a mathematical theorem is it turns out if they&rsquo;re a lot smarter than you or a lot dumber than you or just different from you, what they get out of that example is just going to be different. Not better or worse necessarily, although sometimes better or worse. But but not reliably better or worse. It&rsquo;s not that the smarter people will always get something better out of it. It&rsquo;s just they&rsquo;ll get something out of it randomly. That may be better or worse.</p>
+
+<p>Jason Swett: Yeah, I guess I don&rsquo;t have any more to contribute to that. But it&rsquo;s interesting how some things just can&rsquo;t be easily taught.</p>
+
+<p>Noah Gibbs: Yeah, indeed. And even ones that can be easily taught are often experiential. I mean, like you say, navigation. Sure, okay, there&rsquo;s some things you can stick in a book. And there&rsquo;s a lot of skills that you just have to train with somebody who&rsquo;s done it for them to teach you what they know.</p>
+
+<p>Jason Swett: Yeah, yeah. I was gonna say something more about it, but I don&rsquo;t&hellip; Oh, yeah. Another thing that&rsquo;s maybe it&rsquo;s tragic or maybe it&rsquo;s not tragic at all, but like, we have to start over with each new person. Each person starts out knowing very little and, and I&rsquo;m not saying that to try to be funny. Like I think he starts off with more than zero knowledge because you&rsquo;re born with instincts and stuff like that. There&rsquo;s something in there. But you know, nobody&rsquo;s born knowing anything about programming, even though you might have certain logic that&rsquo;s pre programmed into your brain so that you, you intuitively know that one plus one equals two and stuff like that. But you have to learn it all from scratch. And so as each person dies, a whole bunch of their knowledge goes with them. And so all these things need to be like manually passed on from person to person. It&rsquo;s in a way unfortunate that we can&rsquo;t just load libraries into our brains the way we can load libraries into our programs, although maybe that&rsquo;s actually good. You know, there&rsquo;s the saying that Science advances funeral by funeral. So in a way, the refresh that has to happen with every new generation is a good thing. Although, on the other hand, sometimes it&rsquo;s, it&rsquo;s it&rsquo;s disheartening to see that like, okay, so people I think often like think of society, as progressing in a certain direction, which is true in certain ways. Like, if you just look at the year 1900 and beyond, like, for example, it seems like we&rsquo;ve made progress in our attitude toward gay marriage, like in the 1950s completely taboo. Now in 2020, like, everybody&rsquo;s okay with it pretty much. And we got there somewhat gradually. And that feels like a progression in a certain direction. But you know, like, Alexander the Great 2000 years ago had like a male lover, and so does is so did his dad. And so like, it&rsquo;s not that things went in one direction things oscillated from one place to another place. And</p>
+
+<p>Noah Gibbs: Oh, yeah, it&rsquo;s hard to tell the progression from the pendulums. Certainly a lot of both.</p>
+
+<p>Jason Swett: Although some things do seem to be a genuine progression, like the rate of violence declining in the world, which seems like it won&rsquo;t go back in the other direction. Unless, of course we we have a nuclear war and blow up everything.</p>
+
+<p>Noah Gibbs: Well, and it&rsquo;s it&rsquo;s hard to say what constitutes progress. There have certainly been many people over the years, some of whom are still around, who would would consider that the opposite of progress. You know, there&rsquo;s there&rsquo;s always somebody who doesn&rsquo;t like the direction for any topic.</p>
+
+<p>Jason Swett: That&rsquo;s true. You&rsquo;d like you&rsquo;re saying some people would consider it a bad thing that violence has declined.</p>
+
+<p>Noah Gibbs: Oh, absolutely. Here, let me phrase it this way. Do you think with a little work&hellip; I grew up in Texas, do you think with a little work, I could find somebody who talked about how men aren&rsquo;t as manly and a lot of it&rsquo;s that they don&rsquo;t fight more? Oh, I could find somebody like that.</p>
+
+<p>Jason Swett: Yeah, I could make a little bit of an argument myself, because like, we have an instinct to fight and roughhouse and stuff like that. And I think it&rsquo;s healthy to have a certain amount of, I don&rsquo;t know if I&rsquo;d use the word violence like I don&rsquo;t think we should stab each other. But like wrestling matches and stuff like that, I think is healthy and beneficial. And again, I don&rsquo;t know if you consider that violence or not, but I personally would make that argument.</p>
+
+<p>Noah Gibbs: Yeah, no, I definitely consider that violence because I don&rsquo;t think you&rsquo;re going to find a clear, bright line. I don&rsquo;t think you&rsquo;re going to find a place to draw the line and say, on this side, it is violence. On the other side, it&rsquo;s not. I think you&rsquo;re going to find it&rsquo;s a spectrum. And so there are people who are against roughhousing, there are people who are against mimicking violence, or sticks as swords or pretending to using sticks as pretend guns. You can find families, you know, nowadays&hellip;</p>
+
+<p>Jason Swett: it&rsquo;s probably more common than not, I would imagine.</p>
+
+<p>Noah Gibbs: I don&rsquo;t know that it&rsquo;s over 50% even in California, and I think it&rsquo;s lower in most of the rest of the world. But it definitely exists. It&rsquo;s not hard to find somebody like that, they absolutely exist. And I don&rsquo;t think you&rsquo;re going to find a clear bright line in between, like you say, stabbing someone and mimicking violence. Because there are just too many bits of complexity to it, too many ways to change and there&rsquo;s not going to be a single place that you can draw the line and say, yes, this is violence. Yes, this is not violence. I don&rsquo;t think you&rsquo;re ever going to find that.</p>
+
+<p>Jason Swett: Yeah, that&rsquo;s true. Yeah. And then we get into philosophical questions, like, are all kinds of violence bad all the time? And obviously, the answer that question is no, because if you need to protect somebody from violence, by invoking violence yourself, then obviously that&rsquo;s, that&rsquo;s not bad. Really complicated topic with a lot of different possible position.</p>
+
+<p>Noah Gibbs: Yep. Luckily, this is an old topic. And so there are people who have thought about it a lot longer than you and me that have written down an enormous amount on it. I mean, our listeners won&rsquo;t won&rsquo;t manage to all come to the same opinion but they can all find somebody who has an opinion like them.</p>
+
+<p>Jason Swett: That&rsquo;s true. Yeah, any topic there&rsquo;s like a person who has any position you can conceive on a topic. There&rsquo;s somebody out there who has it.</p>
+
+<p>Noah Gibbs: I&rsquo;m Noah Gibbs. This has been Computer Science: Just the Useful Bits. It&rsquo;s been great talking to Jason Swett.</p>
+
+<p>Jason Swett: Thanks for having me.</p>
+
+
+    </div>
+    <!--
+    <div class="text-muted pager">
+        <a href="/jtub/tyler-williams-hands-on-teaching-formal-and-informal/"><button class="pull-right btn btn-primary">Tyler Williams: Hands-On Teaching Between Students; the Difference Between Formal and Informal Teaching &#8594;</button></a>
+    </div>
+  -->
+  </div>
+
+
+<div id="disqus_thread" class="card" style="padding:10px;"></div>
+<script>
+    var disqus_config = function () {
+        // Replace PAGE_URL with your page's canonical URL variable
+        this.page.url = 'https://justtheusefulbits.com/jtub/jason-swett-when-data-structures-big-o-notation-and-algorithms-were-completely-useless';
+
+        // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.identifier = 'https://justtheusefulbits.com/jtub/jason-swett-when-data-structures-big-o-notation-and-algorithms-were-completely-useless';
+    };
+
+    (function() {
+        var d = document, s = d.createElement('script');
+
+        s.src = 'https://justtheusefulbits.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>
+    Please enable JavaScript to view the
+    <a href="https://disqus.com/?ref_noscript" rel="nofollow">
+        comments powered by Disqus.
+    </a>
+</noscript>
+
+      </div>
+    </div>
+  </div>
+</div>
